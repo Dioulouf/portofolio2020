@@ -1,0 +1,36 @@
+// **********************************     Variables     ************************************
+
+@font-face {
+    font-family: "Gilroy-Light";
+    src: url("../../fonts/Gilroy-Light.ttf") format("TrueType");
+}
+
+@font-face {
+    font-family: "Gilroy-Medium";
+    src: url("../../fonts/Gilroy-Medium.ttf") format("TrueType");
+}
+
+
+
+// **********************************     Mixins     ************************************
+
+
+@mixin bigTitle {
+    font-family: "Gilroy-Medium", sans-serif;
+    font-size: 11rem;
+}
+
+@mixin h2Title {
+    font-family: "Gilroy-Medium", sans-serif;
+    font-size: 7rem;
+}
+
+@mixin h3Title {
+    font-family: "Gilroy-Medium", sans-serif;
+    font-size: 5rem;
+}
+
+@mixin paragraphe {
+    font-family: "Gilroy-Light", sans-serif;
+    font-size: 7rem;
+}

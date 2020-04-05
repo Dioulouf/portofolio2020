@@ -1,0 +1,22 @@
+@import "./_reset";
+@import "./_mixins";
+
+
+
+
+
+h1 {
+    @include bigTitle
+}
+
+h2 {
+    @include h2Title
+}
+
+h3 {
+    @include h3Title
+}
+
+p {
+    @include paragraphe
+}
