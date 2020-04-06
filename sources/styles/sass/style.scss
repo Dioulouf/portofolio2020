@@ -1,12 +1,33 @@
 @import "./_reset";
 @import "./_mixins";
+@import "./_animations";
+
+html {
+    @include for-tablet-landscape-down {
+        font-size: 55%;
+    }
+
+    @include for-big-desktop-up {
+        font-size: 75%;
+    }
+
+    @include for-big-desktop-up-27 {
+        font-size: 85%;
+    }
+}
 
 
 
-
+body {
+    overflow-x: hidden;
+    background-color: $white;
+}
 
 h1 {
-    @include bigTitle
+    @include bigTitle;
+    color: $white;
+    margin-top: 8rem;
+
 }
 
 h2 {
@@ -19,4 +40,195 @@ h3 {
 
 p {
     @include paragraphe
+}
+
+a {
+    text-decoration: none;
+}
+
+// **********************************     Header    ************************************
+
+header {
+    height: 575px;
+    width: 100%;
+    padding: 2% 5%;
+    background-color: black;
+
+    @include for-big-desktop-up {
+        height: 775px;
+    }
+
+    nav {
+        width: 100%;
+
+        ul {
+            display: flex;
+            color: $white;
+
+            li:first-child {
+                width: 61%;
+            }
+
+            li:nth-child(2),
+            li:nth-child(3) {
+                margin-right: 11%;
+            }
+
+            li:nth-child(4) {
+                margin-right: 50px;
+            }
+
+            li:nth-child(5) {
+                position: relative;
+            }
+
+            li:nth-child(5)::before {
+                content: " ";
+                background-color: $white;
+                height: 1px;
+                position: absolute;
+                width: 20px;
+                top: 9px;
+                right: 35px;
+            }
+
+            li {
+                font-size: 1.8rem;
+                font-family: "Gilroy-Medium", sans-serif;
+            }
+
+        }
+    }
+
+    img {
+        width: 400px;
+        position: absolute;
+        z-index: 2;
+        transform: translateY(-7%) translateX(-12%);
+
+        @include for-big-desktop-up {
+            width: 500px;
+        }
+
+        ;
+
+        @include for-desktop-down {
+            width: 350px;
+        }
+
+        ;
+    }
+
+    .header__rect {
+        width: 400px;
+        height: 538px;
+        border: 2px solid $white;
+        position: absolute;
+        right: 5%;
+        top: 340px;
+
+        .header__rect--black {
+            width: 100.5%;
+            height: 303px;
+            // background-color: red;
+            border: 2px solid black;
+            position: absolute;
+            bottom: 0;
+
+            @include for-big-desktop-up {
+                height: 231px;
+            }
+
+            @include for-desktop-down {
+                height: 231px;
+            }
+        }
+
+
+        @include for-big-desktop-up {
+            width: 500px;
+            height: 666px;
+        }
+
+        @include for-desktop-down {
+            width: 350px;
+            height: 466px;
+        }
+
+    }
+
+    .header__line {
+        width: 630px;
+        height: 2px;
+        position: absolute;
+        right: 25%;
+        top: 350px;
+        background-color: $white;
+        transform: rotate(-30deg);
+        stroke-dasharray: 630;
+        stroke-dashoffset: 20;
+
+        @include for-big-desktop-up {
+            width: 830px;
+            top: 410px;
+            right: 27%;
+        }
+
+        @include for-tablet-landscape-down {
+            display: none;
+        }
+    }
+
+    .header__circle {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        border: 2px solid $white;
+        position: absolute;
+        right: -135px;
+        top: 125px;
+    }
+
+
+
+
+}
+
+
+
+// **********************************     Main     ************************************
+
+
+
+// **********************************     section  description   ************************************
+
+.description___rect {
+    width: 250px;
+    height: 250px;
+    border: 2px solid black;
+    position: absolute;
+    top: 0;
+    left: -150px;
+    transform: rotate(45deg);
+}
+
+.section--description {
+    height: 1300px;
+    position: relative;
+    padding-right: 5%;
+    display: flex;
+    align-items: center;
+
+    p {
+        margin-left: 5%;
+        margin-top: 20%;
+    }
+
+    .description__container {
+        width: 100vw;
+        height: 150px;
+        background-color: black;
+        position: absolute;
+        bottom: 0;
+    }
 }

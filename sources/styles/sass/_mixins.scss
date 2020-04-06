@@ -1,4 +1,4 @@
-// **********************************     Variables     ************************************
+// **********************************     Variables  &  fonts   ************************************
 
 @font-face {
     font-family: "Gilroy-Light";
@@ -10,6 +10,9 @@
     src: url("../../fonts/Gilroy-Medium.ttf") format("TrueType");
 }
 
+$white :#FAFAFA;
+
+
 
 
 // **********************************     Mixins     ************************************
@@ -17,7 +20,12 @@
 
 @mixin bigTitle {
     font-family: "Gilroy-Medium", sans-serif;
-    font-size: 11rem;
+    font-size: 8rem;
+    line-height: 9.5rem;
+
+    @media (max-width: 1330px) {
+        font-size: 6rem;
+    }
 }
 
 @mixin h2Title {
@@ -33,4 +41,43 @@
 @mixin paragraphe {
     font-family: "Gilroy-Light", sans-serif;
     font-size: 7rem;
+    line-height: 9rem;
+}
+
+// **********************************       Mixins responsive      ************************************
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-down {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-down {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-down {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up-27 {
+    @media (min-width: 2200px) {
+        @content;
+    }
 }

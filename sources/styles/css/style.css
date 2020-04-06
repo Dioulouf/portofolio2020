@@ -265,9 +265,49 @@ html {
   font-family: "Gilroy-Medium";
   src: url("../../fonts/Gilroy-Medium.ttf") format("TrueType");
 }
+.reveal {
+  transform: -50px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.reveal-visible {
+  transform: 0;
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (min-width: 2200px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+}
+
 h1 {
   font-family: "Gilroy-Medium", sans-serif;
-  font-size: 11rem;
+  font-size: 8rem;
+  line-height: 9.5rem;
+  color: #FAFAFA;
+  margin-top: 8rem;
+}
+@media (max-width: 1330px) {
+  h1 {
+    font-size: 6rem;
+  }
 }
 
 h2 {
@@ -283,6 +323,170 @@ h3 {
 p {
   font-family: "Gilroy-Light", sans-serif;
   font-size: 7rem;
+  line-height: 9rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 575px;
+  width: 100%;
+  padding: 2% 5%;
+  background-color: black;
+}
+@media (min-width: 1800px) {
+  header {
+    height: 775px;
+  }
+}
+header nav {
+  width: 100%;
+}
+header nav ul {
+  display: flex;
+  color: #FAFAFA;
+}
+header nav ul li:first-child {
+  width: 61%;
+}
+header nav ul li:nth-child(2),
+header nav ul li:nth-child(3) {
+  margin-right: 11%;
+}
+header nav ul li:nth-child(4) {
+  margin-right: 50px;
+}
+header nav ul li:nth-child(5) {
+  position: relative;
+}
+header nav ul li:nth-child(5)::before {
+  content: " ";
+  background-color: #FAFAFA;
+  height: 1px;
+  position: absolute;
+  width: 20px;
+  top: 9px;
+  right: 35px;
+}
+header nav ul li {
+  font-size: 1.8rem;
+  font-family: "Gilroy-Medium", sans-serif;
+}
+header img {
+  width: 400px;
+  position: absolute;
+  z-index: 2;
+  transform: translateY(-7%) translateX(-12%);
+}
+@media (min-width: 1800px) {
+  header img {
+    width: 500px;
+  }
+}
+@media (max-width: 1200px) {
+  header img {
+    width: 350px;
+  }
+}
+header .header__rect {
+  width: 400px;
+  height: 538px;
+  border: 2px solid #FAFAFA;
+  position: absolute;
+  right: 5%;
+  top: 340px;
+}
+header .header__rect .header__rect--black {
+  width: 100.5%;
+  height: 303px;
+  border: 2px solid black;
+  position: absolute;
+  bottom: 0;
+}
+@media (min-width: 1800px) {
+  header .header__rect .header__rect--black {
+    height: 231px;
+  }
+}
+@media (max-width: 1200px) {
+  header .header__rect .header__rect--black {
+    height: 231px;
+  }
+}
+@media (min-width: 1800px) {
+  header .header__rect {
+    width: 500px;
+    height: 666px;
+  }
+}
+@media (max-width: 1200px) {
+  header .header__rect {
+    width: 350px;
+    height: 466px;
+  }
+}
+header .header__line {
+  width: 630px;
+  height: 2px;
+  position: absolute;
+  right: 25%;
+  top: 350px;
+  background-color: #FAFAFA;
+  transform: rotate(-30deg);
+  stroke-dasharray: 630;
+  stroke-dashoffset: 20;
+}
+@media (min-width: 1800px) {
+  header .header__line {
+    width: 830px;
+    top: 410px;
+    right: 27%;
+  }
+}
+@media (max-width: 900px) {
+  header .header__line {
+    display: none;
+  }
+}
+header .header__circle {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border: 2px solid #FAFAFA;
+  position: absolute;
+  right: -135px;
+  top: 125px;
+}
+
+.description___rect {
+  width: 250px;
+  height: 250px;
+  border: 2px solid black;
+  position: absolute;
+  top: 0;
+  left: -150px;
+  transform: rotate(45deg);
+}
+
+.section--description {
+  height: 1300px;
+  position: relative;
+  padding-right: 5%;
+  display: flex;
+  align-items: center;
+}
+.section--description p {
+  margin-left: 5%;
+  margin-top: 20%;
+}
+.section--description .description__container {
+  width: 100vw;
+  height: 150px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,10 @@
+.reveal {
+    transform: -50px;
+    opacity: 0;
+    transition: .4s;
+}
+
+.reveal-visible {
+    transform: 0;
+    opacity: 1;
+}
