@@ -27,7 +27,10 @@ h1 {
     @include bigTitle;
     color: $white;
     margin-top: 8rem;
-
+    opacity: 0;
+    animation: diplayLeftToRight 1.2s;
+    animation-fill-mode: forwards;
+    animation-delay: .4s;
 }
 
 h2 {
@@ -60,6 +63,8 @@ header {
 
     nav {
         width: 100%;
+        animation: diplayTopToBottom 1s;
+        animation-fill-mode: forwards;
 
         ul {
             display: flex;
@@ -96,7 +101,6 @@ header {
                 font-size: 1.8rem;
                 font-family: "Gilroy-Medium", sans-serif;
             }
-
         }
     }
 
@@ -104,43 +108,43 @@ header {
         width: 400px;
         position: absolute;
         z-index: 2;
-        transform: translateY(-7%) translateX(-12%);
+        animation: diplayImg 1s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        animation-delay: 1.1s;
 
         @include for-big-desktop-up {
             width: 500px;
         }
 
-        ;
-
         @include for-desktop-down {
             width: 350px;
         }
-
-        ;
     }
 
     .header__rect {
         width: 400px;
         height: 538px;
-        border: 2px solid $white;
         position: absolute;
         right: 5%;
         top: 340px;
 
-        .header__rect--black {
-            width: 100.5%;
-            height: 303px;
-            // background-color: red;
-            border: 2px solid black;
-            position: absolute;
-            bottom: 0;
+        .rect--img {
+            width: 400px;
+            stroke-dasharray: 1000;
+            opacity: 0;
+            animation: displayRectHeader 3s;
+            animation-fill-mode: forwards;
+            animation-delay: 1.3s;
+            transform: translateY(-10px);
 
             @include for-big-desktop-up {
-                height: 231px;
+                width: 500px;
             }
 
             @include for-desktop-down {
-                height: 231px;
+                width: 350px;
+                transform: translateY(22px);
             }
         }
 
@@ -157,21 +161,22 @@ header {
 
     }
 
-    .header__line {
-        width: 630px;
-        height: 2px;
+    .line {
+        width: 500px;
+        height: 500px;
         position: absolute;
-        right: 25%;
-        top: 350px;
-        background-color: $white;
-        transform: rotate(-30deg);
-        stroke-dasharray: 630;
-        stroke-dashoffset: 20;
+        top: 98px;
+        right: 30%;
+        stroke-dasharray: 1000;
+        opacity: 0;
+        animation: displayLineHeader 2s;
+        animation-fill-mode: forwards;
+        animation-delay: .7s;
 
         @include for-big-desktop-up {
             width: 830px;
-            top: 410px;
-            right: 27%;
+            top: 200px;
+            right: 29%;
         }
 
         @include for-tablet-landscape-down {
@@ -179,19 +184,18 @@ header {
         }
     }
 
-    .header__circle {
+    .circle {
         height: 250px;
         width: 250px;
-        border-radius: 50%;
-        border: 2px solid $white;
         position: absolute;
         right: -135px;
         top: 125px;
+        stroke-dasharray: 1000;
+        opacity: 0;
+        animation: displayLineHeader 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.5s;
     }
-
-
-
-
 }
 
 
@@ -202,15 +206,20 @@ header {
 
 // **********************************     section  description   ************************************
 
-.description___rect {
-    width: 250px;
-    height: 250px;
-    border: 2px solid black;
+
+
+.rect-black-description {
+    width: 1250px;
     position: absolute;
-    top: 0;
-    left: -150px;
-    transform: rotate(45deg);
+    top: -200px;
+    left: -725px;
+    opacity: 0;
+    stroke-dasharray: 1000;
+    animation: displayLineHeader 4s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.3s;
 }
+
 
 .section--description {
     height: 1300px;

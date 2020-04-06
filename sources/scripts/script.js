@@ -48,5 +48,5 @@ function revealAnimation(target, ratio, classAdd) {
 revealAnimation(".reveal", .5, 'reveal-visible')
 
 window.addEventListener('scroll', function () {
-    parralax('.section--description p', window.scrollY, -0.15);
+    parralax('.section--description p', window.scrollY, -0.25 r);
 });
