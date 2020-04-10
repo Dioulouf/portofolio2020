@@ -10,7 +10,12 @@
     src: url("../../fonts/Gilroy-Medium.ttf") format("TrueType");
 }
 
-$white :#FAFAFA;
+@font-face {
+    font-family: "Gilroy-Bold";
+    src: url("../../fonts/Gilroy-Bold.ttf") format("TrueType");
+}
+
+$white :rgb(250, 250, 250);
 
 
 
@@ -30,18 +35,24 @@ $white :#FAFAFA;
 
 @mixin h2Title {
     font-family: "Gilroy-Medium", sans-serif;
-    font-size: 7rem;
+    font-size: 8rem;
 }
 
 @mixin h3Title {
     font-family: "Gilroy-Medium", sans-serif;
-    font-size: 5rem;
+    font-size: 3.5rem;
 }
 
 @mixin paragraphe {
     font-family: "Gilroy-Light", sans-serif;
     font-size: 7rem;
     line-height: 9rem;
+}
+
+@mixin descriptionProjects {
+    font-family: "Gilroy-Light", sans-serif;
+    font-size: 1.8rem;
+    line-height: 3.5rem;
 }
 
 // **********************************       Mixins responsive      ************************************

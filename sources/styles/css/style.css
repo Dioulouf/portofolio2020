@@ -265,6 +265,10 @@ html {
   font-family: "Gilroy-Medium";
   src: url("../../fonts/Gilroy-Medium.ttf") format("TrueType");
 }
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("../../fonts/Gilroy-Bold.ttf") format("TrueType");
+}
 .reveal {
   transform: -50px;
   opacity: 0;
@@ -345,14 +349,14 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 h1 {
   font-family: "Gilroy-Medium", sans-serif;
   font-size: 8rem;
   line-height: 9.5rem;
-  color: #FAFAFA;
+  color: #fafafa;
   margin-top: 8rem;
   opacity: 0;
   animation: diplayLeftToRight 1.2s;
@@ -367,12 +371,12 @@ h1 {
 
 h2 {
   font-family: "Gilroy-Medium", sans-serif;
-  font-size: 7rem;
+  font-size: 8rem;
 }
 
 h3 {
   font-family: "Gilroy-Medium", sans-serif;
-  font-size: 5rem;
+  font-size: 3.5rem;
 }
 
 p {
@@ -403,7 +407,7 @@ header nav {
 }
 header nav ul {
   display: flex;
-  color: #FAFAFA;
+  color: #fafafa;
 }
 header nav ul li:first-child {
   width: 61%;
@@ -420,7 +424,7 @@ header nav ul li:nth-child(5) {
 }
 header nav ul li:nth-child(5)::before {
   content: " ";
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   height: 1px;
   position: absolute;
   width: 20px;
@@ -535,7 +539,7 @@ header .circle {
   stroke-dasharray: 1000;
   animation: displayLineHeader 4s;
   animation-fill-mode: forwards;
-  animation-delay: 2.3s;
+  animation-delay: 3s;
 }
 
 .section--description {
@@ -555,6 +559,201 @@ header .circle {
   background-color: black;
   position: absolute;
   bottom: 0;
+}
+
+.section--skills {
+  position: relative;
+  padding-bottom: 110px;
+}
+.section--skills h2 {
+  margin: 9% 5%;
+}
+.section--skills li {
+  font-family: "Gilroy-Light", sans-serif;
+  font-size: 7rem;
+  line-height: 9rem;
+  position: relative;
+  margin-left: 15%;
+  margin-bottom: 10px;
+  font-size: 6rem;
+}
+.section--skills li::before {
+  content: "";
+  width: 15%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: -20%;
+}
+.section--skills .icons-skills {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+@media (max-width: 1200px) {
+  .section--skills .icons-skills {
+    height: 230px;
+    top: 24%;
+    right: 5%;
+  }
+}
+
+.section--projects {
+  position: relative;
+  padding: 5%;
+  height: 2400px;
+  color: #fafafa;
+}
+@media (min-width: 1800px) {
+  .section--projects {
+    height: 2500px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--projects {
+    height: 3000px;
+  }
+}
+.section--projects article {
+  position: absolute;
+}
+.section--projects .article--analytics {
+  top: 300px;
+}
+@media (min-width: 1800px) {
+  .section--projects .article--analytics img {
+    width: 700px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--projects .article--analytics img {
+    width: 900px;
+  }
+}
+.section--projects .article--integration {
+  top: 600px;
+  right: 5%;
+}
+@media (min-width: 1800px) {
+  .section--projects .article--integration img {
+    width: 700px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--projects .article--integration img {
+    width: 900px;
+  }
+}
+.section--projects .article--jeux {
+  top: 1100px;
+  left: 15%;
+}
+@media (min-width: 1800px) {
+  .section--projects .article--jeux img {
+    width: 700px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--projects .article--jeux img {
+    width: 900px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--projects .article--jeux {
+    top: 1400px;
+  }
+}
+.section--projects .article--prototype {
+  top: 1700px;
+  right: 15%;
+}
+@media (min-width: 1800px) {
+  .section--projects .article--prototype img {
+    width: 800px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--projects .article--prototype img {
+    width: 1000px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--projects .article--prototype {
+    top: 2100px;
+  }
+}
+.section--projects p {
+  font-family: "Gilroy-Light", sans-serif;
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+}
+.section--projects .rect-white-project-right {
+  position: absolute;
+  top: 10%;
+  right: -500px;
+  transform: rotate(45deg);
+  stroke: white;
+  height: 500px;
+}
+.section--projects .rect-white-project-left {
+  position: absolute;
+  top: 30%;
+  left: -500px;
+  transform: rotate(64deg);
+  stroke: white;
+  height: 460px;
+}
+.section--projects .circle-project-right {
+  stroke: white;
+  height: 300px;
+  position: absolute;
+  right: -200px;
+  top: 50%;
+}
+
+.section--music {
+  height: 2100px;
+  position: relative;
+  padding: 5%;
+}
+.section--music .music--title {
+  font-size: 15rem;
+  font-family: "Gilroy-Bold";
+  margin-top: 300px;
+  margin-bottom: 400px;
+}
+.section--music .music--title__music {
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.section--music .music__vynil {
+  width: 600px;
+  position: absolute;
+  top: 410px;
+  left: -306px;
+}
+
+footer {
+  height: 80vh;
+  background-color: black;
+  color: #fafafa;
+  padding: 5%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer h2 {
+  margin-bottom: 20px;
+}
+footer a {
+  font-family: "Gilroy-Light", sans-serif;
+  font-size: 7rem;
+  line-height: 9rem;
+  font-size: 5rem;
+  margin-right: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

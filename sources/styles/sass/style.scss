@@ -217,7 +217,7 @@ header {
     stroke-dasharray: 1000;
     animation: displayLineHeader 4s;
     animation-fill-mode: forwards;
-    animation-delay: 2.3s;
+    animation-delay: 3s;
 }
 
 
@@ -240,4 +240,256 @@ header {
         position: absolute;
         bottom: 0;
     }
+}
+
+
+// **********************************     section  skills   ************************************
+
+.section--skills {
+    position: relative;
+    padding-bottom: 110px;
+
+
+    h2 {
+        margin: 9% 5%;
+    }
+
+
+    li {
+        @include paragraphe;
+        position: relative;
+        margin-left: 15%;
+        margin-bottom: 10px;
+        font-size: 6rem;
+
+        &::before {
+            content: "";
+            width: 15%;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: -20%;
+        }
+    }
+
+    .icons-skills {
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        transform: translateY(-50%);
+
+        @include for-desktop-down {
+            height: 230px;
+            top: 24%;
+            right: 5%;
+        }
+    }
+}
+
+
+
+// **********************************     section  projects   ************************************
+
+
+.section--projects {
+    // background-color: rgb(138, 69, 69);
+    position: relative;
+    padding: 5%;
+    height: 2400px;
+    // color: $white;
+    color: $white;
+
+    @include for-big-desktop-up {
+        height: 2500px;
+    }
+
+    @include for-big-desktop-up-27 {
+        height: 3000px;
+    }
+
+    article {
+        position: absolute;
+    }
+
+    .article--analytics {
+        top: 300px;
+
+        img {
+            @include for-big-desktop-up {
+                width: 700px;
+            }
+
+            @include for-big-desktop-up-27 {
+                width: 900px;
+            }
+        }
+
+    }
+
+    .article--integration {
+        top: 600px;
+        right: 5%;
+
+        img {
+            @include for-big-desktop-up {
+                width: 700px;
+            }
+
+            @include for-big-desktop-up-27 {
+                width: 900px;
+            }
+        }
+    }
+
+    .article--jeux {
+        top: 1100px;
+        left: 15%;
+
+        img {
+            @include for-big-desktop-up {
+                width: 700px;
+            }
+
+            @include for-big-desktop-up-27 {
+                width: 900px;
+            }
+        }
+
+        @include for-big-desktop-up-27 {
+            top: 1400px;
+        }
+    }
+
+    .article--prototype {
+        top: 1700px;
+        right: 15%;
+
+        img {
+            @include for-big-desktop-up {
+                width: 800px;
+            }
+
+            @include for-big-desktop-up-27 {
+                width: 1000px;
+            }
+        }
+
+        @include for-big-desktop-up-27 {
+            top: 2100px;
+        }
+    }
+
+    p {
+        @include descriptionProjects
+    }
+
+
+    // design draw
+
+    .rect-white-project-right {
+        position: absolute;
+        top: 10%;
+        right: -500px;
+        transform: rotate(45deg);
+        stroke: white;
+        height: 500px;
+    }
+
+    .rect-white-project-left {
+        position: absolute;
+        top: 30%;
+        left: -500px;
+        transform: rotate(64deg);
+        stroke: white;
+        height: 460px;
+    }
+
+    .circle-project-right {
+        stroke: white;
+        height: 300px;
+        position: absolute;
+        right: -200px;
+        top: 50%;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// **********************************     section  musics   ************************************
+
+.section--music {
+    height: 2100px;
+    position: relative;
+    padding: 5%;
+    // background-color: red;
+
+    .music--title {
+        font-size: 15rem;
+        font-family: "Gilroy-Bold";
+        margin-top: 300px;
+        margin-bottom: 400px;
+    }
+
+    .music--title__music {
+        color: white;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+
+
+    .music__vynil {
+        width: 600px;
+        position: absolute;
+        top: 410px;
+        left: -306px;
+    }
+}
+
+
+
+
+
+// **********************************     footer   ************************************
+
+footer {
+    height: 80vh;
+    background-color: black;
+    color: $white;
+    padding: 5%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    // @include for-big-desktop-up {
+    //     padding: 5%;
+    // }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    a {
+        @include paragraphe;
+        font-size: 5rem;
+        margin-right: 100px;
+    }
+
+
+
 }
