@@ -434,16 +434,32 @@ header {
 // **********************************     section  musics   ************************************
 
 .section--music {
-    height: 2100px;
+    height: 4000px;
     position: relative;
     padding: 5%;
-    // background-color: red;
+
+    @include for-big-desktop-up {
+        height: 4300px;
+    }
+
+    @include for-big-desktop-up-27 {
+        height: 4800px;
+    }
 
     .music--title {
         font-size: 15rem;
         font-family: "Gilroy-Bold";
-        margin-top: 300px;
-        margin-bottom: 400px;
+        width: 100vw;
+        position: sticky;
+        transform: translateX(-110rem);
+
+        @include for-desktop-down {
+            font-size: 12rem;
+        }
+
+        @include for-tablet-landscape-down {
+            font-size: 10rem;
+        }
     }
 
     .music--title__music {
@@ -452,14 +468,42 @@ header {
     }
 
 
-    .music__vynil {
+    .vynil--container {
         width: 600px;
+        background-color: rebeccapurple;
+        height: 2500px;
         position: absolute;
-        top: 410px;
-        left: -306px;
+        top: 131px;
+        left: -300px;
+
+        @include for-big-desktop-up {
+            width: 700px;
+            height: 2800px;
+        }
+
+        @include for-big-desktop-up-27 {
+            width: 800px;
+            height: 2600px;
+        }
+
+        .vynil--container__vynil {
+            width: 100%;
+            position: sticky;
+            z-index: 1;
+        }
     }
+
+    p {
+        position: absolute;
+        bottom: 5%;
+        margin-right: 5%;
+    }
+
+
 }
 
+// width: 720px;
+//     position: absolute;
 
 
 

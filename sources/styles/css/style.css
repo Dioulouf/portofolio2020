@@ -714,25 +714,70 @@ header .circle {
 }
 
 .section--music {
-  height: 2100px;
+  height: 4000px;
   position: relative;
   padding: 5%;
+}
+@media (min-width: 1800px) {
+  .section--music {
+    height: 4300px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--music {
+    height: 4800px;
+  }
 }
 .section--music .music--title {
   font-size: 15rem;
   font-family: "Gilroy-Bold";
-  margin-top: 300px;
-  margin-bottom: 400px;
+  width: 100vw;
+  position: sticky;
+  transform: translateX(-110rem);
+}
+@media (max-width: 1200px) {
+  .section--music .music--title {
+    font-size: 12rem;
+  }
+}
+@media (max-width: 900px) {
+  .section--music .music--title {
+    font-size: 10rem;
+  }
 }
 .section--music .music--title__music {
   color: white;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
-.section--music .music__vynil {
+.section--music .vynil--container {
   width: 600px;
+  background-color: rebeccapurple;
+  height: 2500px;
   position: absolute;
-  top: 410px;
-  left: -306px;
+  top: 131px;
+  left: -300px;
+}
+@media (min-width: 1800px) {
+  .section--music .vynil--container {
+    width: 700px;
+    height: 2800px;
+  }
+}
+@media (min-width: 2200px) {
+  .section--music .vynil--container {
+    width: 800px;
+    height: 2600px;
+  }
+}
+.section--music .vynil--container .vynil--container__vynil {
+  width: 100%;
+  position: sticky;
+  z-index: 1;
+}
+.section--music p {
+  position: absolute;
+  bottom: 5%;
+  margin-right: 5%;
 }
 
 footer {
