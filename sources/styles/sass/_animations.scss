@@ -4,11 +4,50 @@
     transition: .7s;
 }
 
-.reveal-visible {
+.reveal--visible {
     transform: 0;
     opacity: 1;
 }
 
+.animation--rect__projects--right {
+    animation: displayRectProjectRight 4s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+.animation--rect__projects--left {
+    animation: displayRectProjectLeft 3s;
+    animation-fill-mode: forwards;
+}
+
+.animation--circle__projects {
+    animation: displayLineHeader 3s;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes displayRectProjectRight {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 800;
+    }
+}
+
+@keyframes displayRectProjectLeft {
+    0% {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+    }
+
+    100% {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 600;
+    }
+}
 
 
 

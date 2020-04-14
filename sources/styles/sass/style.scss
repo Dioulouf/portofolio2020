@@ -394,6 +394,7 @@ header {
         transform: rotate(45deg);
         stroke: white;
         height: 500px;
+        stroke-dasharray: 800;
     }
 
     .rect-white-project-left {
@@ -403,6 +404,8 @@ header {
         transform: rotate(64deg);
         stroke: white;
         height: 460px;
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
     }
 
     .circle-project-right {
@@ -411,12 +414,10 @@ header {
         position: absolute;
         right: -200px;
         top: 50%;
+
+        stroke-dasharray: 1000;
+        opacity: 0;
     }
-
-
-
-
-
 }
 
 
@@ -470,7 +471,6 @@ header {
 
     .vynil--container {
         width: 600px;
-        background-color: rebeccapurple;
         height: 2500px;
         position: absolute;
         top: 131px;

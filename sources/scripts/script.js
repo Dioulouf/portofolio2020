@@ -4,10 +4,21 @@ const sizes = {}
 sizes.width = window.innerWidth
 sizes.height = window.innerHeight
 
-let vynilContainer = document.querySelector(".vynil--container")
-let vynil = document.querySelector(".vynil--container__vynil")
-let titleMusic = document.querySelector(".section--music h2")
+const descriptionSection = document.querySelector(".section--description")
+
+const vynilContainer = document.querySelector(".vynil--container")
+const vynil = document.querySelector(".vynil--container__vynil")
+const titleMusic = document.querySelector(".section--music h2")
 let FixedRatio = (sizes.height - vynil.getBoundingClientRect().height) / 2
+
+// var for background color transition
+let body = document.querySelector("body")
+var numSteps = 250.0;
+let count = 250
+var boxElement;
+var prevRatio = 0.0;
+var increasingColor = "rgba(40, 40, 190, ratio)";
+var decreasingColor = "rgba(190, 40, 40, ratio)";
 
 // ratio for music animation to have the title and img at the middle of window
 vynil.style.top = `${FixedRatio}px`
@@ -15,17 +26,11 @@ titleMusic.style.top = `${(sizes.height - titleMusic.getBoundingClientRect().hei
 
 
 
+
 // **********************************      Functions    *******************************
 
 
-function parralax(element, distance, speed) {
-    const item = document.querySelector(element);
-    const ratio = distance * speed;
-    item.style.transform = "translateY(" + ratio + "px)";
-}
-
-
-function parralax2(element, distance, speed, translate) {
+function parralax(element, distance, speed, translate) {
     if (translate == true) {
         const item = document.querySelector(element);
         const ratio = distance * speed;
@@ -36,6 +41,7 @@ function parralax2(element, distance, speed, translate) {
         item.style.transform = "rotate(" + ratio + "deg)";
     }
 }
+
 
 function revealAnimation(target, ratio, classAdd) {
 
@@ -58,10 +64,6 @@ function revealAnimation(target, ratio, classAdd) {
 
     const observer = new IntersectionObserver(handleIntersect, options);
 
-    // document.querySelectorAll('[class*="reveal-"]').forEach(function (r) {
-    //     observer.observe(r);
-    // })
-
     observer.observe(Target);
 }
 
@@ -69,94 +71,52 @@ function revealAnimation(target, ratio, classAdd) {
 
 // **********************************      IHM     *******************************
 
-
-
 // event resize window
 window.addEventListener('resize', () => {
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
 })
 
-revealAnimation(".reveal", .5, 'reveal-visible')
+revealAnimation(".reveal", .5, 'reveal--visible')
+
+revealAnimation(".rect-white-project-right", .2, 'animation--rect__projects--right')
+revealAnimation(".rect-white-project-left", .2, 'animation--rect__projects--left')
+revealAnimation(".circle-project-right", .2, 'animation--circle__projects')
+
+
+
+
+
 
 
 window.addEventListener('scroll', function () {
-    parralax('.section--description p', window.scrollY, -0.15);
-    parralax2('.icons-skills', window.scrollY, -0.15, false)
-    parralax2('.vynil--container__vynil', window.scrollY, 0.15, false)
 
+    parralax('.icons-skills', window.scrollY, -0.15, false)
+    parralax('.vynil--container__vynil', window.scrollY, 0.15, false)
 
+    // description animation
+    if (descriptionSection.getBoundingClientRect().top > (0 - descriptionSection.getBoundingClientRect().height)) {
+        parralax('.section--description p', window.scrollY, -0.15, true);
+    }
 
-
-
-
+    // Vynil animation
     if (vynilContainer.getBoundingClientRect().top < 0 && vynilContainer.getBoundingClientRect().top > (0 - vynilContainer.getBoundingClientRect().height)) {
         if (sizes.width < 2200) {
             titleMusic.style.transform = `translateX(${(window.scrollY - 6700) * 0.3}rem)`
         } else {
             titleMusic.style.transform = `translateX(${(window.scrollY - 7500) * 0.3}rem)`
         }
-
     }
-
-
-
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// background transition to black or whrite
-
-let body = document.querySelector("body")
-var numSteps = 250.0;
-let count = 250
-var boxElement;
-var prevRatio = 0.0;
-var increasingColor = "rgba(40, 40, 190, ratio)";
-var decreasingColor = "rgba(190, 40, 40, ratio)";
-
+// background color transition
 
 window.addEventListener("load", function (event) {
     boxElement = document.querySelector(".section--projects");
 
     createObserver();
 }, false);
-
-
 
 function buildThresholdList() {
     var thresholds = [];
