@@ -11,11 +11,14 @@ const vynil = document.querySelector(".vynil--container__vynil")
 const titleMusic = document.querySelector(".section--music h2")
 let FixedRatio = (sizes.height - vynil.getBoundingClientRect().height) / 2
 
+const contactLink = document.querySelector(".link--contact")
+const projectLink = document.querySelector(".link--project")
+
 // var for background color transition
 let body = document.querySelector("body")
-var numSteps = 250.0;
 let count = 250
-var boxElement;
+var projectsSection;
+var footer;
 var prevRatio = 0.0;
 var increasingColor = "rgba(40, 40, 190, ratio)";
 var decreasingColor = "rgba(190, 40, 40, ratio)";
@@ -23,8 +26,6 @@ var decreasingColor = "rgba(190, 40, 40, ratio)";
 // ratio for music animation to have the title and img at the middle of window
 vynil.style.top = `${FixedRatio}px`
 titleMusic.style.top = `${(sizes.height - titleMusic.getBoundingClientRect().height) / 2}px`
-
-
 
 
 // **********************************      Functions    *******************************
@@ -84,11 +85,6 @@ revealAnimation(".rect-white-project-left", .2, 'animation--rect__projects--left
 revealAnimation(".circle-project-right", .2, 'animation--circle__projects')
 
 
-
-
-
-
-
 window.addEventListener('scroll', function () {
 
     parralax('.icons-skills', window.scrollY, -0.15, false)
@@ -101,10 +97,12 @@ window.addEventListener('scroll', function () {
 
     // Vynil animation
     if (vynilContainer.getBoundingClientRect().top < 0 && vynilContainer.getBoundingClientRect().top > (0 - vynilContainer.getBoundingClientRect().height)) {
-        if (sizes.width < 2200) {
+        if (sizes.width < 2200 && sizes.width > 1200) {
             titleMusic.style.transform = `translateX(${(window.scrollY - 6700) * 0.3}rem)`
-        } else {
+        } else if (sizes.width > 2200) {
             titleMusic.style.transform = `translateX(${(window.scrollY - 7500) * 0.3}rem)`
+        } else if (sizes.width <= 1200) {
+            titleMusic.style.transform = `translateX(${(window.scrollY - 6000) * 0.3}rem)`
         }
     }
 });
@@ -113,16 +111,19 @@ window.addEventListener('scroll', function () {
 // background color transition
 
 window.addEventListener("load", function (event) {
-    boxElement = document.querySelector(".section--projects");
+    projectsSection = document.querySelector(".section--projects");
+    footer = document.querySelector("footer")
 
-    createObserver();
+    createObserver(250, 0.4, 0.1, projectsSection);
+    createObserver(250, 0.5, 0.5, footer);
 }, false);
 
-function buildThresholdList() {
+function buildThresholdList(numSteps, area, margin) {
     var thresholds = [];
+    var calcul = area / numSteps
 
     for (var i = 1.0; i <= numSteps; i++) {
-        var ratio = i * 0.0016;
+        var ratio = (i * calcul) + margin;
         thresholds.push(ratio);
     }
 
@@ -136,29 +137,54 @@ function handleIntersect(entries, observer) {
             // console.log(count);
             body.style.backgroundColor = `rgb(${count},${count},${count})`
             if (count > 0) {
-                count = count - 4
+                count = count - 6
             }
 
         } else {
             // console.log(count);
             body.style.backgroundColor = `rgb(${count},${count},${count})`
             if (count < 250) {
-                count = count + 3
+                count = count + 6
             }
         }
         prevRatio = entry.intersectionRatio;
     });
 }
 
-function createObserver() {
+// numsteps = number of ratio 
+// area = interval ratios
+// margin = margin behind the first ratio
+// target = the element to target
+function createObserver(numSteps, area, margin, target) {
     var observer;
 
     var options = {
         root: null,
         rootMargin: "0px",
-        threshold: buildThresholdList()
+        threshold: buildThresholdList(numSteps, area, margin)
     };
 
     observer = new IntersectionObserver(handleIntersect, options);
-    observer.observe(boxElement);
+    observer.observe(target);
+}
+
+
+projectLink.addEventListener("click", () => {
+    body.style.backgroundColor = "rgb(0,0,0)"
+    console.log("projet click");
+})
+
+contactLink.addEventListener("click", () => {
+    body.style.backgroundColor = "rgb(0,0,0)"
+    console.log("contact click");
+})
+
+
+
+
+
+window.onload = function () {
+    setTimeout(function () {
+        body.classList.add('loaded');
+    }, 2000);
 }
