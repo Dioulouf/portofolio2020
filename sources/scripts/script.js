@@ -1,8 +1,8 @@
 // **********************************      Variables     *******************************
 
 const sizes = {}
-sizes.width = window.innerWidth
-sizes.height = window.innerHeight
+sizes.width = document.documentElement.clientWidth
+sizes.height = document.documentElement.clientHeight
 
 const descriptionSection = document.querySelector(".section--description")
 
@@ -14,6 +14,9 @@ let FixedRatio = (sizes.height - vynil.getBoundingClientRect().height) / 2
 const contactLink = document.querySelector(".link--contact")
 const projectLink = document.querySelector(".link--project")
 
+const traineeshipContainer = document.querySelector(".description__container")
+var traineeshipTexte = document.querySelector(".traineeship")
+
 // var for background color transition
 let body = document.querySelector("body")
 let count = 250
@@ -24,8 +27,11 @@ var increasingColor = "rgba(40, 40, 190, ratio)";
 var decreasingColor = "rgba(190, 40, 40, ratio)";
 
 // ratio for music animation to have the title and img at the middle of window
-vynil.style.top = `${FixedRatio}px`
-titleMusic.style.top = `${(sizes.height - titleMusic.getBoundingClientRect().height) / 2}px`
+if (sizes.width > 900) {
+    vynil.style.top = `${FixedRatio}px`
+    titleMusic.style.top = `${(sizes.height - titleMusic.getBoundingClientRect().height) / 2}px`
+}
+
 
 
 // **********************************      Functions    *******************************
@@ -78,33 +84,38 @@ window.addEventListener('resize', () => {
     sizes.height = window.innerHeight
 })
 
-revealAnimation(".reveal", .5, 'reveal--visible')
+revealAnimation(".reveal", .3, 'reveal--visible')
 
 revealAnimation(".rect-white-project-right", .2, 'animation--rect__projects--right')
 revealAnimation(".rect-white-project-left", .2, 'animation--rect__projects--left')
 revealAnimation(".circle-project-right", .2, 'animation--circle__projects')
+revealAnimation(".rect-white-footer-right ", .2, 'animation--rect__footer')
 
 
 window.addEventListener('scroll', function () {
 
     parralax('.icons-skills', window.scrollY, -0.15, false)
     parralax('.vynil--container__vynil', window.scrollY, 0.15, false)
-
-    // description animation
-    if (descriptionSection.getBoundingClientRect().top > (0 - descriptionSection.getBoundingClientRect().height)) {
-        parralax('.section--description p', window.scrollY, -0.15, true);
+    if (sizes.width > 900) {
+        if (traineeshipContainer.getBoundingClientRect().top - sizes.height < 0 && traineeshipContainer.getBoundingClientRect().top - sizes.height + traineeshipContainer.getBoundingClientRect().height > 0 - sizes.height) {
+            traineeshipTexte.style.transform = `translateX(${(traineeshipContainer.getBoundingClientRect().top - sizes.height) + 600}px)`
+        }
     }
 
     // Vynil animation
-    if (vynilContainer.getBoundingClientRect().top < 0 && vynilContainer.getBoundingClientRect().top > (0 - vynilContainer.getBoundingClientRect().height)) {
-        if (sizes.width < 2200 && sizes.width > 1200) {
-            titleMusic.style.transform = `translateX(${(window.scrollY - 6700) * 0.3}rem)`
-        } else if (sizes.width > 2200) {
-            titleMusic.style.transform = `translateX(${(window.scrollY - 7500) * 0.3}rem)`
-        } else if (sizes.width <= 1200) {
-            titleMusic.style.transform = `translateX(${(window.scrollY - 6000) * 0.3}rem)`
+
+    if (sizes.width > 900) {
+        if (vynilContainer.getBoundingClientRect().top < 0 && vynilContainer.getBoundingClientRect().top > (0 - vynilContainer.getBoundingClientRect().height)) {
+            if (sizes.width < 2200 && sizes.width > 1200) {
+                titleMusic.style.transform = `translateX(${(window.scrollY - 6700) * 0.3}rem)`
+            } else if (sizes.width > 2200) {
+                titleMusic.style.transform = `translateX(${(window.scrollY - 7500) * 0.3}rem)`
+            } else if (sizes.width <= 1200 && sizes.width > 900) {
+                titleMusic.style.transform = `translateX(${(window.scrollY - 6000) * 0.3}rem)`
+            }
         }
     }
+
 });
 
 
@@ -114,8 +125,14 @@ window.addEventListener("load", function (event) {
     projectsSection = document.querySelector(".section--projects");
     footer = document.querySelector("footer")
 
-    createObserver(250, 0.4, 0.1, projectsSection);
-    createObserver(250, 0.5, 0.5, footer);
+    if (sizes.width > 900) {
+        createObserver(250, 0.4, 0.1, projectsSection);
+        createObserver(250, 0.5, 0.3, footer);
+    } else {
+        createObserver(250, 0.3, 0, projectsSection);
+        createObserver(250, 0.5, 0, footer);
+    }
+
 }, false);
 
 function buildThresholdList(numSteps, area, margin) {
@@ -169,6 +186,21 @@ function createObserver(numSteps, area, margin, target) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 projectLink.addEventListener("click", () => {
     body.style.backgroundColor = "rgb(0,0,0)"
     console.log("projet click");
@@ -181,10 +213,35 @@ contactLink.addEventListener("click", () => {
 
 
 
-
+// loader animation
 
 window.onload = function () {
+    body.style.overflow = "hidden"
+
+
+
+
+
+
+    //     // if (navigator.browserLanguage) {
+    //     //     var language = navigator.browserLanguage;
+    //     // } else {
+    //     //     var language = navigator.language;
+    //     // }
+    //     // if (language.indexOf('fr') > -1) {
+    //     //     document.location.href = 'file:///Users/diouloufet/Desktop/portofolio2020/index-fr.html';
+    //     // } else if (language.indexOf('en') > -1) {
+    //     //     document.location.href = 'index-en.html'
+    //     // }
+    //     // console.log(document.location);
+
+
+
+
     setTimeout(function () {
         body.classList.add('loaded');
+        window.scrollTo(0, 0);
+        body.style.overflowX = "hidden"
+        body.style.overflowY = ""
     }, 2000);
 }

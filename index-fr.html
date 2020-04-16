@@ -13,10 +13,10 @@
         <nav>
             <ul>
                 <li>Clement Diouloufet</li>
-                <li><a class="link--contact" href="#contact">Contact</a></li>
-                <li><a class="link--project" href="#projects">Projets</a></li>
-                <li><a href="#">Fr</a></li>
-                <li><a href="#">En</a></li>
+                <li><a class="link--contact link--text" href="#contact">Contact</a></li>
+                <li><a class="link--project link--text" href="#projects">Projets</a></li>
+                <li><a class="link--text" href="index-fr.html">Fr</a></li>
+                <li><a class="link--text" href="index-en.html">En</a></li>
             </ul>
         </nav>
         <h1>Etudiant en design et <br> Developpement <br> À Hetic.</h1>
@@ -59,7 +59,9 @@
             <p class="reveal">Salut, je m’appelle Clément. Je suis passionné par le digital et j’étudie à Hetic le
                 développement
                 web et mobile, l’UX-UI design et le marketing.</p>
-            <div class="description__container"></div>
+            <div class="description__container">
+                <p class="traineeship">Je recherche un stage en développement web :)</p>
+            </div>
             <svg class="rect-black-description" width="728.919" height="668.525" viewBox="0 0 728.919 668.525">
                 <g id="Rectangle_15" data-name="Rectangle 15" transform="translate(514.419) rotate(60)" fill="none"
                     stroke="#000" stroke-width="2">
@@ -108,15 +110,16 @@
             </svg>
 
             <article class="article--analytics">
-                <h3>Interface web analytics</h3>
+                <h3><a class="link--text" href="#">Interface web analytics</a></h3>
                 <p>Interface web dynamique montrant les statistiques du covid-19</p>
-                <img src="sources/images/projet-statistique.jpg" width="525px" alt="">
+                <a class="link--img" href="#"><img src="sources/images/projet-statistique.jpg" width="525px" alt=""></a>
             </article>
 
             <article class="article--integration">
-                <h3>Integration web</h3>
+                <h3><a class="link--text" href="#">Integration web</a></h3>
                 <p>Premier projet front à hetic : intégration d’une page web</p>
-                <img src="sources/images/projet-intégration.jpg" width="600px" alt="">
+                <a class="link--img" href="#"><img src="sources/images/projet-intégration.jpg" width="600px"
+                        alt=""></a>
             </article>
 
             <svg class="rect-white-project-left" width="728.919" height="668.525" viewBox="0 0 728.919 668.525">
@@ -128,9 +131,9 @@
             </svg>
 
             <article class="article--jeux">
-                <h3>Creation jeux 2D</h3>
+                <h3><a class="link--text" href="#">Creation jeux 2D</a></h3>
                 <p>Creation d’un jeux 2d sur le web</p>
-                <img src="sources/images/truck-jumper.jpg" width="600px" alt="">
+                <a class="link--img" href="#"><img src="sources/images/truck-jumper.jpg" width="600px" alt=""></a>
             </article>
 
             <svg class="circle-project-right" viewBox="0 0 394 377">
@@ -141,9 +144,9 @@
             </svg>
 
             <article class="article--prototype">
-                <h3>Prototype UX - UI</h3>
+                <h3><a class="link--text" href="#">Prototype UX - UI</a></h3>
                 <p>Refonte d’une page produit Aromazone - Recherche UX, prototype UI, intégration </p>
-                <img src="sources/images/maquette-aromazone.jpg" width="750px" alt="">
+                <a class="link--img" href="#"><img src="sources/images/maquette-aromazone.jpg" width="750px" alt=""></a>
             </article>
         </section>
 
@@ -154,12 +157,15 @@
                 <img class="vynil--container__vynil" src="sources/icones/vynil.png" alt="image vynil">
                 <h2 class="music--title"> <span class="music--title__music">Music</span> is my sanity</h2>
             </div>
-
-
-            <p>La musique est ma grande passion depuis 3 ans. Je passe une grande partie de mon temps libre à en faire.
+            <p class="reveal">La musique est ma grande passion depuis 3 ans. Je passe une grande partie de mon temps
+                libre à en faire.
                 Mixer me permet d’exprimer ma créativité. Mes services ont déjà été sollicités pour plusieurs
                 événements. Ces expériences riches en rencontres m’ont permis de développer une certaine aisance
                 sociale.</p>
+            <div class="fader--container">
+                <div class="fader--container__line"></div>
+                <div class="fader--container__fader"></div>
+            </div>
         </section>
     </main>
 
@@ -174,18 +180,27 @@
     <footer id="contact">
         <div class="footer__contact">
             <h2>Contactez moi</h2>
-            <a href="mailto:clementdiouloufet0799@gmail.com">clementdiouloufet0799@gmail.com</a>
+            <a class="link--text" href="mailto:clementdiouloufet0799@gmail.com">clementdiouloufet0799@gmail.com</a>
         </div>
 
         <div class="footer__social">
             <h2>Retrouvez moi sur</h2>
-            <a href="https://www.linkedin.com/in/cl%C3%A9ment-diouloufet-80/" target="blank">Linkedin</a>
-            <a href="https://github.com/Dioulouf" target="blank">Github</a>
+            <a class="link--text" href="https://www.linkedin.com/in/cl%C3%A9ment-diouloufet-80/"
+                target="blank">Linkedin</a>
+            <a class="link--text" href="https://github.com/Dioulouf" target="blank">Github</a>
         </div>
 
-    </footer>
+        <svg class="rect-white-footer-right" width="728.919" height="668.525" viewBox="0 0 728.919 668.525">
+            <g id="Rectangle_15" data-name="Rectangle 15" transform="translate(514.419) rotate(60)" fill="none"
+                stroke-width="2">
+                <rect width="429" height="594" stroke="none" />
+                <rect x="1" y="1" width="427" height="592" fill="none" />
+            </g>
+        </svg>
 
+    </footer>
     <script src="sources/scripts/script.js"></script>
+    <script> </script>
 </body>
 
 </html>

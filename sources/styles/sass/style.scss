@@ -14,20 +14,35 @@ html {
     @include for-big-desktop-up-27 {
         font-size: 85%;
     }
+
+    @include for-tablet {
+        font-size: 50%;
+    }
+
+    @include for-phone-only {
+        font-size: 35%;
+    }
 }
 
-a {
+.link--text {
+    transition: background-size .6s;
+    background: linear-gradient(to top, rgba(255, 254, 254) 0%, rgba(255, 255, 255) 10%, transparent 1%) no-repeat left bottom / 0 100%;
+}
+
+.link--text:hover {
+    background-size: 100% 100%;
+}
+
+.link--img {
     transition: opacity .4s;
 }
 
-a:hover {
-    opacity: 0.5;
+.link--img:hover {
+    opacity: 0.6;
 }
 
 
-
 body {
-    overflow-x: hidden;
     background-color: $white;
 }
 
@@ -39,6 +54,10 @@ h1 {
     animation: diplayLeftToRight 1.2s;
     animation-fill-mode: forwards;
     animation-delay: 3s;
+
+    @include for-phone-only {
+        font-size: 5rem;
+    }
 }
 
 h2 {
@@ -50,7 +69,11 @@ h3 {
 }
 
 p {
-    @include paragraphe
+    @include paragraphe;
+
+    @include for-tablet {
+        font-size: 6;
+    }
 }
 
 a {
@@ -67,6 +90,10 @@ header {
 
     @include for-big-desktop-up {
         height: 775px;
+    }
+
+    @include for-phone-only {
+        height: 313px;
     }
 
     nav {
@@ -130,6 +157,18 @@ header {
         @include for-desktop-down {
             width: 350px;
         }
+
+        @include for-tablet {
+            width: 300px;
+        }
+
+        @include for-phone-only {
+            animation: diplayImgForFone 1s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            animation-delay: 3.7s;
+            width: 180px;
+        }
     }
 
     .header__rect {
@@ -156,6 +195,16 @@ header {
                 width: 350px;
                 transform: translateY(22px);
             }
+
+            @include for-tablet {
+                width: 300px;
+                transform: translateY(53px);
+            }
+
+            @include for-phone-only {
+                width: 180px;
+            }
+
         }
 
 
@@ -169,6 +218,10 @@ header {
             height: 466px;
         }
 
+        @include for-phone-only {
+            right: -44%;
+            top: 151px;
+        }
     }
 
     .line {
@@ -205,6 +258,12 @@ header {
         animation: displayLineHeader 3s;
         animation-fill-mode: forwards;
         animation-delay: 4s;
+
+        @include for-phone-only {
+            height: 150px;
+            top: 65px;
+            right: -160px;
+        }
     }
 }
 
@@ -228,11 +287,25 @@ header {
     animation: displayLineHeader 4s;
     animation-fill-mode: forwards;
     animation-delay: 8s;
+
+    @include for-tablet-landscape-down {
+        width: 1050px;
+    }
+
+    @include for-tablet {
+        width: 951px;
+    }
+
+    @include for-phone-only {
+        width: 350px;
+        left: -275px;
+        top: -265px;
+    }
 }
 
 
 .section--description {
-    height: 1300px;
+    height: 1100px;
     position: relative;
     padding-right: 5%;
     display: flex;
@@ -240,7 +313,6 @@ header {
 
     p {
         margin-left: 5%;
-        margin-top: 20%;
     }
 
     .description__container {
@@ -249,6 +321,31 @@ header {
         background-color: black;
         position: absolute;
         bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .traineeship {
+            color: $white;
+            margin-left: 0;
+            white-space: nowrap;
+
+            @include for-tablet-landscape-down {
+                font-size: 3.2rem;
+            }
+
+            @include for-phone-only {
+                display: none;
+            }
+        }
+
+        @include for-phone-only {
+            height: 100px;
+        }
+    }
+
+    @include for-phone-only {
+        height: 800px;
     }
 }
 
@@ -294,6 +391,22 @@ header {
             top: 24%;
             right: 5%;
         }
+
+        @include for-tablet {
+            height: 170px;
+            top: 24%;
+            right: 0%;
+        }
+
+        @include for-phone-only {
+            display: none;
+        }
+
+
+
+
+
+
     }
 }
 
@@ -310,6 +423,11 @@ header {
     // color: $white;
     color: $white;
 
+    @include for-phone-only {
+        height: 1400px;
+    }
+
+
     @include for-big-desktop-up {
         height: 2500px;
     }
@@ -325,6 +443,10 @@ header {
     .article--analytics {
         top: 300px;
 
+        @include for-phone-only {
+            top: 200px;
+        }
+
 
 
         img {
@@ -338,6 +460,10 @@ header {
 
             @include for-big-desktop-up-27 {
                 width: 900px;
+            }
+
+            @include for-phone-only {
+                width: 290px;
             }
         }
 
@@ -351,6 +477,10 @@ header {
             top: 700px;
         }
 
+        @include for-phone-only {
+            top: 500px;
+        }
+
         img {
             @include for-desktop-down {
                 width: 450px;
@@ -363,12 +493,21 @@ header {
             @include for-big-desktop-up-27 {
                 width: 900px;
             }
+
+            @include for-phone-only {
+                width: 290px;
+            }
         }
     }
 
     .article--jeux {
         top: 1100px;
         left: 15%;
+
+        @include for-phone-only {
+            top: 800px;
+            left: 5%;
+        }
 
         @include for-tablet-landscape-down {
             left: 10%;
@@ -385,6 +524,10 @@ header {
 
             @include for-big-desktop-up-27 {
                 width: 900px;
+            }
+
+            @include for-phone-only {
+                width: 300px;
             }
         }
 
@@ -403,12 +546,11 @@ header {
             left: 10%;
         }
 
-
-
+        @include for-phone-only {
+            top: 1100px;
+        }
 
         img {
-
-
             @include for-desktop-down {
                 width: 700px;
             }
@@ -423,6 +565,14 @@ header {
 
             @include for-big-desktop-up-27 {
                 width: 1000px;
+            }
+
+            @include for-tablet {
+                width: 500px;
+            }
+
+            @include for-phone-only {
+                width: 300px;
             }
         }
 
@@ -446,6 +596,11 @@ header {
         stroke: white;
         height: 500px;
         stroke-dasharray: 800;
+
+        @include for-phone-only {
+            top: -2%;
+            height: 318px;
+        }
     }
 
     .rect-white-project-left {
@@ -457,6 +612,12 @@ header {
         height: 460px;
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
+
+        @include for-phone-only {
+            height: 360px;
+            top: 43%;
+            left: -515px;
+        }
     }
 
     .circle-project-right {
@@ -468,6 +629,16 @@ header {
 
         stroke-dasharray: 1000;
         opacity: 0;
+
+        @include for-tablet {
+            height: 225px
+        }
+
+        @include for-phone-only {
+            height: 125px;
+            top: 78%;
+            right: -100px;
+        }
     }
 }
 
@@ -486,9 +657,15 @@ header {
 // **********************************     section  musics   ************************************
 
 .section--music {
-    height: 4000px;
+    height: 3700px;
     position: relative;
     padding: 5%;
+
+
+
+    @include for-tablet-landscape-down {
+        height: 2000px;
+    }
 
     @include for-big-desktop-up {
         height: 4300px;
@@ -496,6 +673,10 @@ header {
 
     @include for-big-desktop-up-27 {
         height: 4800px;
+    }
+
+    @include for-phone-only {
+        height: 1600px;
     }
 
     .music--title {
@@ -510,7 +691,16 @@ header {
         }
 
         @include for-tablet-landscape-down {
-            font-size: 10rem;
+            font-size: 7rem;
+            transform: translate(0);
+            position: absolute;
+            left: 23%;
+            top: 37%;
+            z-index: 2;
+        }
+
+        @include for-tablet-landscape-down {
+            left: 14%;
         }
     }
 
@@ -526,6 +716,15 @@ header {
         position: absolute;
         top: 131px;
         left: -300px;
+        // background-color: red;
+
+        @include for-tablet-landscape-down {
+            height: 500px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            margin-top: 30px;
+        }
 
         @include for-big-desktop-up {
             width: 700px;
@@ -541,7 +740,21 @@ header {
             width: 100%;
             position: sticky;
             z-index: 1;
+
+
+            @include for-tablet-landscape-down {
+                width: 432px;
+                position: absolute;
+                left: -32%;
+            }
+
+            @include for-phone-only {
+                width: 300px;
+                left: -41%;
+                top: 53px;
+            }
         }
+
     }
 
     p {
@@ -550,11 +763,35 @@ header {
         margin-right: 5%;
     }
 
-
 }
 
-// width: 720px;
-//     position: absolute;
+
+.fader--container {
+    height: 1030px;
+    width: 3%;
+    // background-color: red;
+    position: absolute;
+    bottom: 3%;
+    right: 1%;
+
+    .fader--container__line {
+        width: 1px;
+        height: 100%;
+        background-color: black;
+        position: absolute;
+        left: calc(50% - 1px);
+        top: -1%;
+    }
+
+    .fader--container__fader {
+        width: 100%;
+        height: 75px;
+        border: 1px solid black;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+}
 
 
 
@@ -562,7 +799,7 @@ header {
 // **********************************     footer   ************************************
 
 footer {
-    height: 80vh;
+    height: 70vh;
     background-color: black;
     color: $white;
     padding: 5%;
@@ -571,9 +808,13 @@ footer {
     flex-direction: column;
     justify-content: space-between;
 
-    // @include for-big-desktop-up {
-    //     padding: 5%;
-    // }
+    @include for-tablet-landscape-down {
+        height: 60vh;
+    }
+
+    @include for-phone-only {
+        height: 45vh;
+    }
 
     h2 {
         margin-bottom: 20px;
@@ -583,6 +824,25 @@ footer {
         @include paragraphe;
         font-size: 5rem;
         margin-right: 100px;
+
+        @include for-tablet {
+            font-size: 3.8rem;
+        }
+    }
+
+    .rect-white-footer-right {
+        position: absolute;
+        top: 16%;
+        right: -400px;
+        transform: rotate(146deg);
+        stroke: white;
+        height: 280px;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+
+        @include for-tablet {
+            display: none;
+        }
     }
 
 
@@ -617,10 +877,13 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 10;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     // Modernizr no-js fallback
     .no-js & {
@@ -632,11 +895,8 @@ footer {
 #loader {
     display: block;
     position: relative;
-    left: 50%;
-    top: 50%;
     width: 150px;
     height: 150px;
-    margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 2px solid transparent;
     border-top-color: #000000;
@@ -667,27 +927,6 @@ footer {
         border: 2px solid transparent;
         border-top-color: #000000;
         animation: spin 1s linear infinite;
-    }
-}
-
-// Bourbon mixins
-@keyframes spin {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    100% {
-        transform: rotate(360deg)
-    }
-}
-
-@keyframes spin-reverse {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    100% {
-        transform: rotate(-360deg)
     }
 }
 
