@@ -17,12 +17,12 @@ var traineeshipTexte = document.querySelector(".traineeship")
 let body = document.querySelector("body")
 
 // var for background color transition
-let count = 250
-var projectsSection;
-var footer;
-var prevRatio = 0.0;
-var increasingColor = "rgba(40, 40, 190, ratio)";
-var decreasingColor = "rgba(190, 40, 40, ratio)";
+// let count = 250
+// var projectsSection;
+// var footer;
+// var prevRatio = 0.0;
+// var increasingColor = "rgba(40, 40, 190, ratio)";
+// var decreasingColor = "rgba(190, 40, 40, ratio)";
 
 // ratio for music animation to have the title and img at the middle of window
 if (sizes.width > 900) {
