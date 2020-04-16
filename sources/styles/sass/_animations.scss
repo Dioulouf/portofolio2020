@@ -19,6 +19,18 @@
     animation-fill-mode: forwards;
 }
 
+@keyframes displayParagraphe {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 @keyframes displayRectFooter {
     0% {
         stroke-dashoffset: 1000;
@@ -28,8 +40,6 @@
         stroke-dashoffset: 0;
     }
 }
-
-
 
 @keyframes displayRectProjectRight {
     0% {

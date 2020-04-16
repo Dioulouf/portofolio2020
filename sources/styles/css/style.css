@@ -290,6 +290,16 @@ html {
   animation-fill-mode: forwards;
 }
 
+@keyframes displayParagraphe {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 @keyframes displayRectFooter {
   0% {
     stroke-dashoffset: 1000;
@@ -393,6 +403,9 @@ html {
     transform: rotate(-360deg);
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 @media (max-width: 900px) {
   html {
     font-size: 55%;
@@ -438,6 +451,13 @@ html {
 
 body {
   background-color: #fafafa;
+  touch-action: manipulation;
+  touch-action: pan-y;
+}
+@media (max-width: 900px) {
+  body {
+    background-color: #fafafa;
+  }
 }
 
 h1 {
@@ -540,6 +560,12 @@ header nav ul li:nth-child(5)::before {
   width: 20px;
   top: 9px;
   right: 35px;
+}
+@media (max-width: 599px) {
+  header nav ul li:nth-child(5)::before {
+    top: 5px;
+    right: 27px;
+  }
 }
 header nav ul li {
   font-size: 1.8rem;
@@ -687,7 +713,7 @@ header .circle {
   stroke-dasharray: 1000;
   animation: displayLineHeader 4s;
   animation-fill-mode: forwards;
-  animation-delay: 8s;
+  animation-delay: 5s;
 }
 @media (max-width: 900px) {
   .rect-black-description {
@@ -714,8 +740,12 @@ header .circle {
   display: flex;
   align-items: center;
 }
-.section--description p {
+.section--description .section--description__descritptionP {
   margin-left: 5%;
+  opacity: 0;
+  animation: displayParagraphe 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 6s;
 }
 .section--description .description__container {
   width: 100vw;
@@ -756,6 +786,11 @@ header .circle {
 .section--skills {
   position: relative;
   padding-bottom: 110px;
+}
+@media (max-width: 900px) {
+  .section--skills {
+    padding-bottom: 55px;
+  }
 }
 .section--skills h2 {
   margin: 9% 5%;
@@ -805,10 +840,16 @@ header .circle {
 }
 
 .section--projects {
+  background-color: black;
   position: relative;
   padding: 5%;
   height: 2400px;
   color: #fafafa;
+}
+@media (max-width: 900px) {
+  .section--projects h2 {
+    margin-top: 55px;
+  }
 }
 @media (max-width: 599px) {
   .section--projects {
@@ -1013,7 +1054,7 @@ header .circle {
 @media (max-width: 599px) {
   .section--projects .rect-white-project-left {
     height: 360px;
-    top: 43%;
+    top: 40%;
     left: -515px;
   }
 }
@@ -1034,7 +1075,7 @@ header .circle {
 @media (max-width: 599px) {
   .section--projects .circle-project-right {
     height: 125px;
-    top: 78%;
+    top: 73%;
     right: -100px;
   }
 }
@@ -1088,7 +1129,7 @@ header .circle {
 }
 @media (max-width: 900px) {
   .section--music .music--title {
-    left: 14%;
+    left: 10%;
   }
 }
 .section--music .music--title__music {

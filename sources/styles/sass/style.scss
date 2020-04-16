@@ -3,6 +3,8 @@
 @import "./_animations";
 
 html {
+    scroll-behavior: smooth;
+
     @include for-tablet-landscape-down {
         font-size: 55%;
     }
@@ -24,6 +26,8 @@ html {
     }
 }
 
+
+
 .link--text {
     transition: background-size .6s;
     background: linear-gradient(to top, rgba(255, 254, 254) 0%, rgba(255, 255, 255) 10%, transparent 1%) no-repeat left bottom / 0 100%;
@@ -44,6 +48,12 @@ html {
 
 body {
     background-color: $white;
+    touch-action: manipulation;
+    touch-action: pan-y;
+
+    @include for-tablet-landscape-down {
+        background-color: $white;
+    }
 }
 
 h1 {
@@ -132,6 +142,11 @@ header {
                 width: 20px;
                 top: 9px;
                 right: 35px;
+
+                @include for-phone-only {
+                    top: 5px;
+                    right: 27px;
+                }
             }
 
             li {
@@ -286,7 +301,7 @@ header {
     stroke-dasharray: 1000;
     animation: displayLineHeader 4s;
     animation-fill-mode: forwards;
-    animation-delay: 8s;
+    animation-delay: 5s;
 
     @include for-tablet-landscape-down {
         width: 1050px;
@@ -311,8 +326,12 @@ header {
     display: flex;
     align-items: center;
 
-    p {
+    .section--description__descritptionP {
         margin-left: 5%;
+        opacity: 0;
+        animation: displayParagraphe 1.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 6s;
     }
 
     .description__container {
@@ -355,6 +374,10 @@ header {
 .section--skills {
     position: relative;
     padding-bottom: 110px;
+
+    @include for-tablet-landscape-down {
+        padding-bottom: 55px;
+    }
 
 
     h2 {
@@ -416,12 +439,17 @@ header {
 
 
 .section--projects {
-    // background-color: rgb(138, 69, 69);
+    background-color: black;
     position: relative;
     padding: 5%;
     height: 2400px;
-    // color: $white;
     color: $white;
+
+    h2 {
+        @include for-tablet-landscape-down {
+            margin-top: 55px;
+        }
+    }
 
     @include for-phone-only {
         height: 1400px;
@@ -615,7 +643,7 @@ header {
 
         @include for-phone-only {
             height: 360px;
-            top: 43%;
+            top: 40%;
             left: -515px;
         }
     }
@@ -636,7 +664,7 @@ header {
 
         @include for-phone-only {
             height: 125px;
-            top: 78%;
+            top: 73%;
             right: -100px;
         }
     }
@@ -700,7 +728,7 @@ header {
         }
 
         @include for-tablet-landscape-down {
-            left: 14%;
+            left: 10%;
         }
     }
 
@@ -844,31 +872,7 @@ footer {
             display: none;
         }
     }
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* The Loader */

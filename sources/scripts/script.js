@@ -11,14 +11,12 @@ const vynil = document.querySelector(".vynil--container__vynil")
 const titleMusic = document.querySelector(".section--music h2")
 let FixedRatio = (sizes.height - vynil.getBoundingClientRect().height) / 2
 
-const contactLink = document.querySelector(".link--contact")
-const projectLink = document.querySelector(".link--project")
-
 const traineeshipContainer = document.querySelector(".description__container")
 var traineeshipTexte = document.querySelector(".traineeship")
 
-// var for background color transition
 let body = document.querySelector("body")
+
+// var for background color transition
 let count = 250
 var projectsSection;
 var footer;
@@ -110,7 +108,7 @@ window.addEventListener('scroll', function () {
                 titleMusic.style.transform = `translateX(${(window.scrollY - 6700) * 0.3}rem)`
             } else if (sizes.width > 2200) {
                 titleMusic.style.transform = `translateX(${(window.scrollY - 7500) * 0.3}rem)`
-            } else if (sizes.width <= 1200 && sizes.width > 900) {
+            } else if (sizes.width <= 1200) {
                 titleMusic.style.transform = `translateX(${(window.scrollY - 6000) * 0.3}rem)`
             }
         }
@@ -119,54 +117,66 @@ window.addEventListener('scroll', function () {
 });
 
 
+
+
+
+
 // background color transition
 
-window.addEventListener("load", function (event) {
-    projectsSection = document.querySelector(".section--projects");
-    footer = document.querySelector("footer")
+// window.addEventListener("load", function (event) {
+//     projectsSection = document.querySelector(".section--projects");
+//     footer = document.querySelector("footer")
 
-    if (sizes.width > 900) {
-        createObserver(250, 0.4, 0.1, projectsSection);
-        createObserver(250, 0.5, 0.3, footer);
-    } else {
-        createObserver(250, 0.3, 0, projectsSection);
-        createObserver(250, 0.5, 0, footer);
-    }
+//     if (sizes.width > 900) {
+//         createObserver(250, 0.4, 0.1, projectsSection);
+//         createObserver(250, 0.5, 0.3, footer);
+//     }
 
-}, false);
+// }, false);
 
-function buildThresholdList(numSteps, area, margin) {
-    var thresholds = [];
-    var calcul = area / numSteps
+// function buildThresholdList(numSteps, area, margin) {
+//     var thresholds = [];
+//     var calcul = area / numSteps
 
-    for (var i = 1.0; i <= numSteps; i++) {
-        var ratio = (i * calcul) + margin;
-        thresholds.push(ratio);
-    }
+//     for (var i = 1.0; i <= numSteps; i++) {
+//         var ratio = (i * calcul) + margin;
+//         thresholds.push(ratio);
+//     }
 
-    thresholds.push(0);
-    return thresholds;
-}
+//     thresholds.push(0);
+//     return thresholds;
+// }
 
-function handleIntersect(entries, observer) {
-    entries.forEach(function (entry) {
-        if (entry.intersectionRatio > prevRatio) {
-            // console.log(count);
-            body.style.backgroundColor = `rgb(${count},${count},${count})`
-            if (count > 0) {
-                count = count - 6
-            }
+// function handleIntersect(entries, observer) {
+//     entries.forEach(function (entry) {
+//         if (entry.intersectionRatio > prevRatio) {
+//             body.style.backgroundColor = `rgb(${count},${count},${count})`
+//             if (count > 0) {
+//                 count = count - 6
+//             }
 
-        } else {
-            // console.log(count);
-            body.style.backgroundColor = `rgb(${count},${count},${count})`
-            if (count < 250) {
-                count = count + 6
-            }
-        }
-        prevRatio = entry.intersectionRatio;
-    });
-}
+//         } else {
+//             body.style.backgroundColor = `rgb(${count},${count},${count})`
+//             if (count < 250) {
+//                 count = count + 6
+//             }
+//         }
+//         prevRatio = entry.intersectionRatio;
+//     });
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // numsteps = number of ratio 
 // area = interval ratios
@@ -192,24 +202,6 @@ function createObserver(numSteps, area, margin, target) {
 
 
 
-
-
-
-
-
-
-
-
-
-projectLink.addEventListener("click", () => {
-    body.style.backgroundColor = "rgb(0,0,0)"
-    console.log("projet click");
-})
-
-contactLink.addEventListener("click", () => {
-    body.style.backgroundColor = "rgb(0,0,0)"
-    console.log("contact click");
-})
 
 
 
