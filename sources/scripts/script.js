@@ -96,7 +96,7 @@ window.addEventListener('scroll', function () {
     parralax('.vynil--container__vynil', window.scrollY, 0.15, false)
     if (sizes.width > 900) {
         if (traineeshipContainer.getBoundingClientRect().top - sizes.height < 0 && traineeshipContainer.getBoundingClientRect().top - sizes.height + traineeshipContainer.getBoundingClientRect().height > 0 - sizes.height) {
-            traineeshipTexte.style.transform = `translateX(${((traineeshipContainer.getBoundingClientRect().top - sizes.height) + 500) * 0.5}px)`
+            traineeshipTexte.style.transform = `translateX(${((traineeshipContainer.getBoundingClientRect().top - sizes.height) + 550) * 0.5}px)`
         }
     }
 
@@ -119,81 +119,6 @@ window.addEventListener('scroll', function () {
 
 
 
-
-
-// background color transition
-
-// window.addEventListener("load", function (event) {
-//     projectsSection = document.querySelector(".section--projects");
-//     footer = document.querySelector("footer")
-
-//     if (sizes.width > 900) {
-//         createObserver(250, 0.4, 0.1, projectsSection);
-//         createObserver(250, 0.5, 0.3, footer);
-//     }
-
-// }, false);
-
-// function buildThresholdList(numSteps, area, margin) {
-//     var thresholds = [];
-//     var calcul = area / numSteps
-
-//     for (var i = 1.0; i <= numSteps; i++) {
-//         var ratio = (i * calcul) + margin;
-//         thresholds.push(ratio);
-//     }
-
-//     thresholds.push(0);
-//     return thresholds;
-// }
-
-// function handleIntersect(entries, observer) {
-//     entries.forEach(function (entry) {
-//         if (entry.intersectionRatio > prevRatio) {
-//             body.style.backgroundColor = `rgb(${count},${count},${count})`
-//             if (count > 0) {
-//                 count = count - 6
-//             }
-
-//         } else {
-//             body.style.backgroundColor = `rgb(${count},${count},${count})`
-//             if (count < 250) {
-//                 count = count + 6
-//             }
-//         }
-//         prevRatio = entry.intersectionRatio;
-//     });
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// numsteps = number of ratio 
-// area = interval ratios
-// margin = margin behind the first ratio
-// target = the element to target
-function createObserver(numSteps, area, margin, target) {
-    var observer;
-
-    var options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: buildThresholdList(numSteps, area, margin)
-    };
-
-    observer = new IntersectionObserver(handleIntersect, options);
-    observer.observe(target);
-}
 
 
 

@@ -26,26 +26,6 @@ html {
     }
 }
 
-
-
-.link--text {
-    transition: background-size .6s;
-    background: linear-gradient(to top, rgba(255, 254, 254) 0%, rgba(255, 255, 255) 10%, transparent 1%) no-repeat left bottom / 0 100%;
-}
-
-.link--text:hover {
-    background-size: 100% 100%;
-}
-
-.link--img {
-    transition: opacity .4s;
-}
-
-.link--img:hover {
-    opacity: 0.6;
-}
-
-
 body {
     background-color: $white;
     touch-action: manipulation;
@@ -89,6 +69,28 @@ p {
 a {
     text-decoration: none;
 }
+
+.link--text {
+    transition: background-size .6s;
+    background: linear-gradient(to top, rgba(255, 254, 254) 0%, rgba(255, 255, 255) 10%, transparent 1%) no-repeat left bottom / 0 100%;
+}
+
+.link--text:hover {
+    background-size: 100% 100%;
+}
+
+.link--img {
+    transition: opacity .5s;
+}
+
+.link--img:hover {
+    opacity: 0.7;
+}
+
+.shadow {
+    display: none;
+}
+
 
 // **********************************     Header    ************************************
 

@@ -432,23 +432,6 @@ html {
   }
 }
 
-.link--text {
-  transition: background-size 0.6s;
-  background: linear-gradient(to top, #fffefe 0%, white 10%, transparent 1%) no-repeat left bottom/0 100%;
-}
-
-.link--text:hover {
-  background-size: 100% 100%;
-}
-
-.link--img {
-  transition: opacity 0.4s;
-}
-
-.link--img:hover {
-  opacity: 0.6;
-}
-
 body {
   background-color: #fafafa;
   touch-action: manipulation;
@@ -510,6 +493,27 @@ p {
 
 a {
   text-decoration: none;
+}
+
+.link--text {
+  transition: background-size 0.6s;
+  background: linear-gradient(to top, #fffefe 0%, white 10%, transparent 1%) no-repeat left bottom/0 100%;
+}
+
+.link--text:hover {
+  background-size: 100% 100%;
+}
+
+.link--img {
+  transition: opacity 0.5s;
+}
+
+.link--img:hover {
+  opacity: 0.7;
+}
+
+.shadow {
+  display: none;
 }
 
 header {
