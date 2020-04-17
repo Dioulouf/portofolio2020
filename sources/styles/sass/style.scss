@@ -22,7 +22,8 @@ html {
     }
 
     @include for-phone-only {
-        font-size: 35%;
+        // font-size: 35%;
+        font-size: 100%;
     }
 }
 
@@ -47,6 +48,7 @@ h1 {
 
     @include for-phone-only {
         font-size: 32px;
+        line-height: 1;
     }
 }
 
@@ -338,6 +340,7 @@ header {
         @include for-phone-only {
             margin-bottom: 40%;
             font-size: 28px;
+            line-height: 1;
         }
     }
 

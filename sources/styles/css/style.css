@@ -428,7 +428,7 @@ html {
 }
 @media (max-width: 599px) {
   html {
-    font-size: 35%;
+    font-size: 100%;
   }
 }
 
@@ -462,6 +462,7 @@ h1 {
 @media (max-width: 599px) {
   h1 {
     font-size: 32px;
+    line-height: 1;
   }
 }
 
@@ -755,6 +756,7 @@ header .circle {
   .section--description .section--description__descritptionP {
     margin-bottom: 40%;
     font-size: 28px;
+    line-height: 1;
   }
 }
 .section--description .description__container {
