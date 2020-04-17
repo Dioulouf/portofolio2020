@@ -714,7 +714,7 @@ header {
     }
 
     @include for-phone-only {
-        height: 1400px;
+        height: 1200px;
     }
 
     .music--title {
@@ -860,7 +860,7 @@ footer {
 
     @include for-phone-only {
         padding: 10% 5%;
-        height: 65vh;
+        height: 60vh;
     }
 
     h2 {

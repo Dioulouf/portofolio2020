@@ -1124,7 +1124,7 @@ header .circle {
 }
 @media (max-width: 599px) {
   .section--music {
-    height: 1400px;
+    height: 1200px;
   }
 }
 .section--music .music--title {
@@ -1263,7 +1263,7 @@ footer {
 @media (max-width: 599px) {
   footer {
     padding: 10% 5%;
-    height: 65vh;
+    height: 60vh;
   }
 }
 footer h2 {
