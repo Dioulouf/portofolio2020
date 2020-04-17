@@ -96,7 +96,7 @@ window.addEventListener('scroll', function () {
     parralax('.vynil--container__vynil', window.scrollY, 0.15, false)
     if (sizes.width > 900) {
         if (traineeshipContainer.getBoundingClientRect().top - sizes.height < 0 && traineeshipContainer.getBoundingClientRect().top - sizes.height + traineeshipContainer.getBoundingClientRect().height > 0 - sizes.height) {
-            traineeshipTexte.style.transform = `translateX(${(traineeshipContainer.getBoundingClientRect().top - sizes.height) + 600}px)`
+            traineeshipTexte.style.transform = `translateX(${((traineeshipContainer.getBoundingClientRect().top - sizes.height) + 500) * 0.5}px)`
         }
     }
 
