@@ -46,7 +46,7 @@ h1 {
     animation-delay: 3s;
 
     @include for-phone-only {
-        font-size: 5.8rem;
+        font-size: 32px;
     }
 }
 
@@ -337,7 +337,7 @@ header {
 
         @include for-phone-only {
             margin-bottom: 40%;
-            font-size: 5rem;
+            font-size: 28px;
         }
     }
 
