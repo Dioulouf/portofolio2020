@@ -1,28 +1,17 @@
-// **********************************      Variables     *******************************
+// **********************************      variables     *******************************
 
 const sizes = {}
 sizes.width = document.documentElement.clientWidth
 sizes.height = document.documentElement.clientHeight
 
 const descriptionSection = document.querySelector(".section--description")
-
 const vynilContainer = document.querySelector(".vynil--container")
 const vynil = document.querySelector(".vynil--container__vynil")
 const titleMusic = document.querySelector(".section--music h2")
 let FixedRatio = (sizes.height - vynil.getBoundingClientRect().height) / 2
-
 const traineeshipContainer = document.querySelector(".description__container")
-var traineeshipTexte = document.querySelector(".traineeship")
-
-let body = document.querySelector("body")
-
-// var for background color transition
-// let count = 250
-// var projectsSection;
-// var footer;
-// var prevRatio = 0.0;
-// var increasingColor = "rgba(40, 40, 190, ratio)";
-// var decreasingColor = "rgba(190, 40, 40, ratio)";
+const traineeshipTexte = document.querySelector(".traineeship")
+const body = document.querySelector("body")
 
 // ratio for music animation to have the title and img at the middle of window
 if (sizes.width > 900) {
@@ -30,10 +19,7 @@ if (sizes.width > 900) {
     titleMusic.style.top = `${(sizes.height - titleMusic.getBoundingClientRect().height) / 2}px`
 }
 
-
-
 // **********************************      Functions    *******************************
-
 
 function parralax(element, distance, speed, translate) {
     if (translate == true) {
@@ -47,12 +33,9 @@ function parralax(element, distance, speed, translate) {
     }
 }
 
-
 function revealAnimation(target, ratio, classAdd) {
-
     let Target = document.querySelector(target);
-
-    var options = {
+    let options = {
         root: null,
         rootMargin: '0px',
         threshold: ratio
@@ -66,13 +49,9 @@ function revealAnimation(target, ratio, classAdd) {
             }
         });
     }
-
     const observer = new IntersectionObserver(handleIntersect, options);
-
     observer.observe(Target);
 }
-
-
 
 // **********************************      IHM     *******************************
 
@@ -82,16 +61,12 @@ window.addEventListener('resize', () => {
     sizes.height = window.innerHeight
 })
 
-revealAnimation(".reveal", .3, 'reveal--visible')
-
 revealAnimation(".rect-white-project-right", .2, 'animation--rect__projects--right')
 revealAnimation(".rect-white-project-left", .2, 'animation--rect__projects--left')
 revealAnimation(".circle-project-right", .2, 'animation--circle__projects')
 revealAnimation(".rect-white-footer-right ", .2, 'animation--rect__footer')
 
-
 window.addEventListener('scroll', function () {
-
     parralax('.icons-skills', window.scrollY, -0.15, false)
     parralax('.vynil--container__vynil', window.scrollY, 0.15, false)
     if (sizes.width > 900) {
@@ -116,44 +91,21 @@ window.addEventListener('scroll', function () {
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // loader animation
-
 window.onload = function () {
     body.style.overflow = "hidden"
 
-
-
-
-
-
     //     // if (navigator.browserLanguage) {
-    //     //     var language = navigator.browserLanguage;
+    //     //     let language = navigator.browserLanguage;
     //     // } else {
-    //     //     var language = navigator.language;
+    //     //     let language = navigator.language;
     //     // }
     //     // if (language.indexOf('fr') > -1) {
     //     //     document.location.href = 'file:///Users/diouloufet/Desktop/portofolio2020/index-fr.html';
-    //     // } else if (language.indexOf('en') > -1) {
+    //     // } else {
     //     //     document.location.href = 'index-en.html'
     //     // }
     //     // console.log(document.location);
-
-
-
 
     setTimeout(function () {
         body.classList.add('loaded');
