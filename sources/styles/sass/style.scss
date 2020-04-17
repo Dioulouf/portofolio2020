@@ -46,7 +46,7 @@ h1 {
     animation-delay: 3s;
 
     @include for-phone-only {
-        font-size: 5rem;
+        font-size: 5.8rem;
     }
 }
 
@@ -62,7 +62,7 @@ p {
     @include paragraphe;
 
     @include for-tablet {
-        font-size: 6;
+        font-size: 6rem;
     }
 }
 
@@ -279,7 +279,7 @@ header {
         @include for-phone-only {
             height: 150px;
             top: 65px;
-            right: -160px;
+            right: -185px;
         }
     }
 }
@@ -316,7 +316,7 @@ header {
     @include for-phone-only {
         width: 350px;
         left: -275px;
-        top: -265px;
+        top: -200px;
     }
 }
 
@@ -334,6 +334,11 @@ header {
         animation: displayParagraphe 1.5s;
         animation-fill-mode: forwards;
         animation-delay: 6s;
+
+        @include for-phone-only {
+            margin-bottom: 40%;
+            font-size: 5rem;
+        }
     }
 
     .description__container {
@@ -367,7 +372,8 @@ header {
     }
 
     @include for-phone-only {
-        height: 800px;
+        height: 700px;
+        align-items: flex-end;
     }
 }
 
@@ -379,7 +385,7 @@ header {
     padding-bottom: 110px;
 
     @include for-tablet-landscape-down {
-        padding-bottom: 55px;
+        padding-bottom: 30px;
     }
 
 
@@ -393,7 +399,10 @@ header {
         position: relative;
         margin-left: 15%;
         margin-bottom: 10px;
-        // font-size: 5rem;
+
+        @include for-phone-only {
+            font-size: 5rem;
+        }
 
         &::before {
             content: "";
@@ -427,12 +436,6 @@ header {
         @include for-phone-only {
             display: none;
         }
-
-
-
-
-
-
     }
 }
 
@@ -450,7 +453,7 @@ header {
 
     h2 {
         @include for-tablet-landscape-down {
-            margin-top: 55px;
+            margin-top: 35px;
         }
     }
 
@@ -477,8 +480,6 @@ header {
         @include for-phone-only {
             top: 200px;
         }
-
-
 
         img {
             @include for-desktop-down {
@@ -629,8 +630,10 @@ header {
         stroke-dasharray: 800;
 
         @include for-phone-only {
-            top: -2%;
+            top: 0;
             height: 318px;
+            right: -449px;
+            transform: rotate(70deg);
         }
     }
 
@@ -730,8 +733,12 @@ header {
             z-index: 2;
         }
 
-        @include for-tablet-landscape-down {
-            left: 10%;
+        @include for-tablet {
+            left: 15%;
+        }
+
+        @include for-phone-only {
+            left: 5%;
         }
     }
 
@@ -780,9 +787,9 @@ header {
             }
 
             @include for-phone-only {
-                width: 300px;
-                left: -41%;
-                top: 53px;
+                width: 270px;
+                left: -155px;
+                top: 66px;
             }
         }
 
@@ -792,6 +799,10 @@ header {
         position: absolute;
         bottom: 5%;
         margin-right: 5%;
+
+        @include for-phone-only {
+            font-size: 5rem;
+        }
     }
 
 }
@@ -844,7 +855,8 @@ footer {
     }
 
     @include for-phone-only {
-        height: 45vh;
+        padding: 10% 5%;
+        height: 65vh;
     }
 
     h2 {

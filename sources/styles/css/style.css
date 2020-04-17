@@ -461,7 +461,7 @@ h1 {
 }
 @media (max-width: 599px) {
   h1 {
-    font-size: 5rem;
+    font-size: 5.8rem;
   }
 }
 
@@ -487,7 +487,7 @@ p {
 }
 @media (max-width: 700px) {
   p {
-    font-size: 6;
+    font-size: 6rem;
   }
 }
 
@@ -704,7 +704,7 @@ header .circle {
   header .circle {
     height: 150px;
     top: 65px;
-    right: -160px;
+    right: -185px;
   }
 }
 
@@ -733,7 +733,7 @@ header .circle {
   .rect-black-description {
     width: 350px;
     left: -275px;
-    top: -265px;
+    top: -200px;
   }
 }
 
@@ -750,6 +750,12 @@ header .circle {
   animation: displayParagraphe 1.5s;
   animation-fill-mode: forwards;
   animation-delay: 6s;
+}
+@media (max-width: 599px) {
+  .section--description .section--description__descritptionP {
+    margin-bottom: 40%;
+    font-size: 5rem;
+  }
 }
 .section--description .description__container {
   width: 100vw;
@@ -784,7 +790,8 @@ header .circle {
 }
 @media (max-width: 599px) {
   .section--description {
-    height: 800px;
+    height: 700px;
+    align-items: flex-end;
   }
 }
 
@@ -794,7 +801,7 @@ header .circle {
 }
 @media (max-width: 900px) {
   .section--skills {
-    padding-bottom: 55px;
+    padding-bottom: 30px;
   }
 }
 .section--skills h2 {
@@ -807,6 +814,11 @@ header .circle {
   position: relative;
   margin-left: 15%;
   margin-bottom: 10px;
+}
+@media (max-width: 599px) {
+  .section--skills li {
+    font-size: 5rem;
+  }
 }
 .section--skills li::before {
   content: "";
@@ -852,7 +864,7 @@ header .circle {
 }
 @media (max-width: 900px) {
   .section--projects h2 {
-    margin-top: 55px;
+    margin-top: 35px;
   }
 }
 @media (max-width: 599px) {
@@ -1041,8 +1053,10 @@ header .circle {
 }
 @media (max-width: 599px) {
   .section--projects .rect-white-project-right {
-    top: -2%;
+    top: 0;
     height: 318px;
+    right: -449px;
+    transform: rotate(70deg);
   }
 }
 .section--projects .rect-white-project-left {
@@ -1131,9 +1145,14 @@ header .circle {
     z-index: 2;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .section--music .music--title {
-    left: 10%;
+    left: 15%;
+  }
+}
+@media (max-width: 599px) {
+  .section--music .music--title {
+    left: 5%;
   }
 }
 .section--music .music--title__music {
@@ -1182,15 +1201,20 @@ header .circle {
 }
 @media (max-width: 599px) {
   .section--music .vynil--container .vynil--container__vynil {
-    width: 300px;
-    left: -41%;
-    top: 53px;
+    width: 270px;
+    left: -155px;
+    top: 66px;
   }
 }
 .section--music p {
   position: absolute;
   bottom: 5%;
   margin-right: 5%;
+}
+@media (max-width: 599px) {
+  .section--music p {
+    font-size: 5rem;
+  }
 }
 
 .fader--container {
@@ -1234,7 +1258,8 @@ footer {
 }
 @media (max-width: 599px) {
   footer {
-    height: 45vh;
+    padding: 10% 5%;
+    height: 65vh;
   }
 }
 footer h2 {
