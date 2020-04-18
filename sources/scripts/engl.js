@@ -94,7 +94,7 @@ window.addEventListener('scroll', function () {
 // loader animation
 window.onload = function () {
     body.style.overflow = "hidden"
-    sessionStorage.setItem('firstEnglBrowserLoad', 1);
+
     setTimeout(function () {
         body.classList.add('loaded');
         window.scrollTo(0, 0);

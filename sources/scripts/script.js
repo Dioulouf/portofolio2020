@@ -53,17 +53,6 @@ function revealAnimation(target, ratio, classAdd) {
     observer.observe(Target);
 }
 
-function getEnglishPage() {
-    if (navigator.browserLanguage) {
-        var language = navigator.browserLanguage;
-    } else {
-        var language = navigator.languages;
-    }
-    if (language.indexOf('fr') != 0 && language.indexOf('fr-FR') != 0) {
-        document.location.href = 'file:///Users/diouloufet/Desktop/portofolio2020/engl.html'
-    }
-}
-
 // **********************************      IHM     *******************************
 
 // event resize window
@@ -106,12 +95,6 @@ window.addEventListener('scroll', function () {
 // Event onload -> loader animation + look the browser language 
 window.onload = function () {
     body.style.overflow = "hidden"
-
-    let firstEnglBrowserLoad = sessionStorage.getItem('firstEnglBrowserLoad');
-
-    if (firstEnglBrowserLoad != 1) {
-        getEnglishPage()
-    }
 
     setTimeout(function () {
         body.classList.add('loaded');
