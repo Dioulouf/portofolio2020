@@ -57,11 +57,9 @@ function getEnglishPage() {
     if (navigator.browserLanguage) {
         var language = navigator.browserLanguage;
     } else {
-        var language = navigator.language;
+        var language = navigator.languages;
     }
-    if (language.indexOf('fr') > -1) {
-        console.log("français");
-    } else {
+    if (language.indexOf('fr') != 0 && language.indexOf('fr-FR') != 0) {
         document.location.href = 'file:///Users/diouloufet/Desktop/portofolio2020/engl.html'
     }
 }
