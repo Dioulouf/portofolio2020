@@ -384,6 +384,8 @@ header {
 
 // **********************************     section  skills   ************************************
 
+
+
 .section--skills {
     position: relative;
     padding-bottom: 110px;
@@ -392,11 +394,9 @@ header {
         padding-bottom: 30px;
     }
 
-
     h2 {
         margin: 9% 5%;
     }
-
 
     li {
         @include paragraphe;
@@ -448,11 +448,12 @@ header {
 // **********************************     section  projects   ************************************
 
 
+
 .section--projects {
     background-color: black;
     position: relative;
     padding: 5%;
-    height: 2400px;
+    height: 2900px;
     color: $white;
 
     h2 {
@@ -461,17 +462,20 @@ header {
         }
     }
 
-    @include for-phone-only {
-        height: 1400px;
+    @include for-tablet-landscape-down {
+        height: 2700px;
     }
 
+    @include for-phone-only {
+        height: 1700px;
+    }
 
     @include for-big-desktop-up {
-        height: 2500px;
+        height: 3000px;
     }
 
     @include for-big-desktop-up-27 {
-        height: 3000px;
+        height: 3650px;
     }
 
     article {
@@ -617,6 +621,54 @@ header {
         }
     }
 
+    .article--gameboy {
+        top: 2300px;
+        left: 10%;
+
+
+        @include for-tablet-landscape-down {
+            top: 2100px;
+            left: 5%;
+        }
+
+        @include for-phone-only {
+            top: 1400px;
+        }
+
+        img {
+            width: 700px;
+
+            @include for-desktop-down {
+                width: 700px;
+            }
+
+            @include for-tablet-landscape-down {
+                width: 600px;
+            }
+
+            @include for-big-desktop-up {
+                width: 800px;
+            }
+
+            @include for-big-desktop-up-27 {
+                width: 1000px;
+            }
+
+            @include for-tablet {
+                width: 500px;
+            }
+
+            @include for-phone-only {
+                width: 300px;
+            }
+        }
+
+        @include for-big-desktop-up-27 {
+            top: 2800px;
+        }
+
+    }
+
     p {
         @include descriptionProjects
     }
@@ -626,7 +678,7 @@ header {
 
     .rect-white-project-right {
         position: absolute;
-        top: 10%;
+        top: 100px;
         right: -500px;
         transform: rotate(45deg);
         stroke: white;
@@ -643,7 +695,7 @@ header {
 
     .rect-white-project-left {
         position: absolute;
-        top: 30%;
+        top: 625px;
         left: -500px;
         transform: rotate(64deg);
         stroke: white;
@@ -653,7 +705,7 @@ header {
 
         @include for-phone-only {
             height: 360px;
-            top: 40%;
+            top: 570px;
             left: -515px;
         }
     }
@@ -663,8 +715,7 @@ header {
         height: 300px;
         position: absolute;
         right: -200px;
-        top: 50%;
-
+        top: 1425px;
         stroke-dasharray: 1000;
         opacity: 0;
 
@@ -674,8 +725,48 @@ header {
 
         @include for-phone-only {
             height: 125px;
-            top: 73%;
+            top: 1015px;
             right: -100px;
+        }
+    }
+
+    .line-project-left {
+        width: 300px;
+        position: absolute;
+        top: 2095px;
+        left: 0;
+        transform: rotate(39deg);
+
+        @include for-big-desktop-up {
+            width: 500px;
+            top: 1995px;
+        }
+
+        @include for-tablet-landscape-down {
+            top: 1935px;
+        }
+
+        @include for-phone-only {
+            top: 1289px;
+            width: 200px;
+            left: -100px;
+        }
+    }
+
+    .rect-white-project-bottom-right {
+        position: absolute;
+        top: 2400px;
+        right: -500px;
+        transform: rotate(60deg);
+        stroke: white;
+        height: 500px;
+        // stroke-dasharray: 800;
+
+        @include for-phone-only {
+            top: 1509px;
+            height: 318px;
+            right: -476px;
+            transform: rotate(64deg);
         }
     }
 }
