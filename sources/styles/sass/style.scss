@@ -478,6 +478,13 @@ header {
         height: 3650px;
     }
 
+    // a {
+    //     @include for-tablet-landscape-down {
+    //         pointer-events: none;
+    //         cursor: default;
+    //     }
+    // }
+
     article {
         position: absolute;
     }
