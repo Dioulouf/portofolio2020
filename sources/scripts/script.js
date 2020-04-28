@@ -101,5 +101,5 @@ window.onload = function () {
         window.scrollTo(0, 0);
         body.style.overflowX = "hidden"
         body.style.overflowY = ""
-    }, 2000);
+    }, 1000);
 }
