@@ -158,6 +158,10 @@ header {
             li {
                 font-size: 1.8rem;
                 font-family: "Gilroy-Medium", sans-serif;
+
+                @include for-big-desktop-up {
+                    font-size: 2.5rem;
+                }
             }
         }
     }
@@ -200,30 +204,46 @@ header {
         top: 340px;
 
         .rect--img {
-            width: 400px;
+            width: 750px;
             stroke-dasharray: 1000;
             opacity: 0;
-            animation: displayRectHeader 3s;
+            animation: displayRectHeader 6s;
             animation-fill-mode: forwards;
-            animation-delay: 3.9s;
-            transform: translateY(-10px);
+            animation-delay: 4.5s;
+            transform: translateY(-73px) translateX(-220px);
 
             @include for-big-desktop-up {
-                width: 500px;
+                display: none;
             }
 
             @include for-desktop-down {
-                width: 350px;
-                transform: translateY(22px);
+                width: 650px;
+                transform: translateY(-31px) translateX(-172px);
             }
 
             @include for-tablet {
-                width: 300px;
-                transform: translateY(53px);
+                width: 600px;
+                transform: translateY(-13px) translateX(-190px);
             }
 
             @include for-phone-only {
-                width: 180px;
+                width: 380px;
+                transform: translateY(6px) translateX(-125px);
+            }
+        }
+
+        .rect--img--2 {
+            display: none;
+
+            @include for-big-desktop-up {
+                display: inline;
+                width: 1050px;
+                stroke-dasharray: 1000;
+                opacity: 0;
+                animation: displayRectHeader 5s;
+                animation-fill-mode: forwards;
+                animation-delay: 4.3s;
+                transform: translateY(-121px) translateX(-320px);
             }
 
         }
@@ -240,7 +260,7 @@ header {
         }
 
         @include for-phone-only {
-            right: -44%;
+            right: -160px;
             top: 151px;
         }
     }
