@@ -50,7 +50,7 @@ h1 {
     animation-delay: 3s;
 
     @include for-phone-only {
-        font-size: 32px;
+        font-size: 28px;
     }
 }
 
@@ -194,6 +194,10 @@ header {
             animation-delay: 3.7s;
             width: 180px;
         }
+
+        @media (max-width: 359px) {
+            transform: translateY(27%) translateX(-5%) !important;
+        }
     }
 
     .header__rect {
@@ -229,6 +233,11 @@ header {
             @include for-phone-only {
                 width: 380px;
                 transform: translateY(6px) translateX(-125px);
+            }
+
+            @media (max-width: 359px) {
+                width: 350px;
+                transform: translateY(18px) translateX(-98px);
             }
         }
 
@@ -393,11 +402,16 @@ header {
         @include for-phone-only {
             height: 100px;
         }
+
     }
 
     @include for-phone-only {
         height: 700px;
         align-items: flex-end;
+    }
+
+    @media (max-width: 359px) {
+        height: 775px;
     }
 }
 
