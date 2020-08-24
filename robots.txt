@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clement-diouloufet.com/sitemap.xml
