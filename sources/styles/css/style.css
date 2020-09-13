@@ -272,7 +272,6 @@ html {
 .animation--rect__projects--right {
   animation: displayRectProjectRight 4s;
   animation-fill-mode: forwards;
-  animation-delay: 1s;
 }
 
 .animation--rect__projects--left {
@@ -330,6 +329,22 @@ html {
   0% {
     opacity: 1;
     stroke-dashoffset: 1000;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+.display__line--project {
+  animation: displayLineProject 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+@keyframes displayLineProject {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: -1000;
   }
   100% {
     opacity: 1;
@@ -452,7 +467,7 @@ h1 {
   font-size: 8rem;
   line-height: 9.5rem;
   color: #fafafa;
-  margin-top: 8rem;
+  margin-top: 7rem;
   opacity: 0;
   animation: diplayLeftToRight 1.2s;
   animation-fill-mode: forwards;
@@ -719,7 +734,7 @@ header .line {
     right: 29%;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1033px) {
   header .line {
     display: none;
   }
@@ -1208,6 +1223,8 @@ header .circle {
   top: 2095px;
   left: 0;
   transform: rotate(39deg);
+  stroke-dasharray: 1770;
+  stroke-dashoffset: -1000;
 }
 @media (min-width: 1800px) {
   .section--projects .line-project-left {
@@ -1234,6 +1251,7 @@ header .circle {
   transform: rotate(60deg);
   stroke: white;
   height: 500px;
+  stroke-dasharray: 800;
 }
 @media (max-width: 599px) {
   .section--projects .rect-white-project-bottom-right {

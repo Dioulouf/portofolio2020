@@ -43,7 +43,7 @@ body {
 h1 {
     @include bigTitle;
     color: $white;
-    margin-top: 8rem;
+    margin-top: 7rem;
     opacity: 0;
     animation: diplayLeftToRight 1.2s;
     animation-fill-mode: forwards;
@@ -292,7 +292,7 @@ header {
             right: 29%;
         }
 
-        @include for-tablet-landscape-down {
+        @media (max-width: 1033px) {
             display: none;
         }
     }
@@ -777,6 +777,10 @@ header {
         top: 2095px;
         left: 0;
         transform: rotate(39deg);
+        stroke-dasharray: 1770;
+        stroke-dashoffset: -1000;
+
+
 
         @include for-big-desktop-up {
             width: 500px;
@@ -801,7 +805,7 @@ header {
         transform: rotate(60deg);
         stroke: white;
         height: 500px;
-        // stroke-dasharray: 800;
+        stroke-dasharray: 800;
 
         @include for-phone-only {
             top: 1509px;

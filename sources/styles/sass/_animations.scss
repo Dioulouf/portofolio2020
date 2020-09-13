@@ -1,7 +1,6 @@
 .animation--rect__projects--right {
     animation: displayRectProjectRight 4s;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
 }
 
 .animation--rect__projects--left {
@@ -70,6 +69,24 @@
     0% {
         opacity: 1;
         stroke-dashoffset: 1000;
+    }
+
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+.display__line--project {
+    animation: displayLineProject 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes displayLineProject {
+    0% {
+        opacity: 1;
+        stroke-dashoffset: -1000;
     }
 
     100% {

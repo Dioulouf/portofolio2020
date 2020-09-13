@@ -65,6 +65,8 @@ revealAnimation(".rect-white-project-right", .2, 'animation--rect__projects--rig
 revealAnimation(".rect-white-project-left", .2, 'animation--rect__projects--left')
 revealAnimation(".circle-project-right", .2, 'animation--circle__projects')
 revealAnimation(".rect-white-footer-right ", .2, 'animation--rect__footer')
+revealAnimation(".line-project-left", .2, 'display__line--project')
+revealAnimation(".rect-white-project-bottom-right", .2, 'animation--rect__projects--right')
 
 window.addEventListener('scroll', function () {
     parralax('.icons-skills', window.scrollY, -0.15, false)
