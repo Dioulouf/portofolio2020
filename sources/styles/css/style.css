@@ -870,11 +870,15 @@ header .circle {
   position: relative;
   margin-left: 15%;
   margin-bottom: 10px;
+  transition: 0.4s;
 }
 @media (max-width: 599px) {
   .section--skills li {
     font-size: 5rem;
   }
+}
+.section--skills li:hover {
+  transform: translateX(25px);
 }
 .section--skills li::before {
   content: "";
